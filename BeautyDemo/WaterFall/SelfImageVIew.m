@@ -44,9 +44,25 @@
         imageView.backgroundColor = [UIColor palePurpleColor];
         [self addSubview:imageView];
         //如果想加别的信息在此可加
-        UILabel *labe = [[UILabel alloc]initWithFrame:CGRectMake(SPACE / 2, height - 20 + SPACE, width, 20)];
+        UILabel *labe = [[UILabel alloc] init];
         labe.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.5];
         labe.text = imageInfo.title;
+        if ([labe.text isEqualToString:@""]) {
+            labe.text = @"Beauty";
+        }
+        labe.font = [UIFont systemFontOfSize:10];
+        labe.textAlignment = NSTextAlignmentCenter;
+        labe.numberOfLines = 0;
+        labe.lineBreakMode = NSLineBreakByCharWrapping;
+        
+        CGFloat labeW = width;
+        CGFloat labeH = [labe.text boundingRectWithSize:CGSizeMake(labeW, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:10]} context:nil].size.height;
+        if(labeH > height*0.333){
+            labeH = height*0.333;
+        }
+        
+        labe.frame = CGRectMake(SPACE/2, height-labeH, labeW, labeH);
+        
         self.backgroundColor = [UIColor whiteColor];
         [self addSubview:labe];
         

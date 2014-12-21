@@ -90,6 +90,9 @@
 - (void)initWallView
 {
     [self.waterView removeFromSuperview];
+    //注销与waterView有关的KVO
+    [footer free];
+    [header free];
     //初始化当前图片数组
     self.testArr = [[NSMutableArray alloc]init];
     clickImage = [[UIImageView alloc]init];
@@ -130,6 +133,9 @@
         testRequest = [ASIHTTPRequest requestWithURL:url];
         [testRequest setDelegate:self];
         [testRequest startAsynchronous];
+        NSString *path = [[NSBundle mainBundle]pathForResource:@"initArr" ofType:@"plist"];
+        // Load the file content and read the data into arrays
+        picArr= [[NSMutableArray alloc] initWithContentsOfFile:path];
     }
     
     self.waterView = [[ImageWaterView alloc]initWithDataArray:testArr withFrame:CGRectMake(0, 44, 320, Screen_height-44)];
@@ -161,6 +167,9 @@
 -(void)myRefreshLogic
 {
     [self.waterView removeFromSuperview];
+    //注销与waterView绑定的KVO
+    [header free];
+    [footer free];
     //初始化当前图片数组
     self.testArr = [[NSMutableArray alloc]init];
     clickImage = [[UIImageView alloc]init];
@@ -178,6 +187,7 @@
     testRequest = [ASIHTTPRequest requestWithURL:url];
     [testRequest setDelegate:self];
     [testRequest startAsynchronous];
+    
     self.waterView = [[ImageWaterView alloc]initWithDataArray:testArr withFrame:CGRectMake(0, 44, 320, Screen_height-44)];
     
     self.waterView.delegate = self;
