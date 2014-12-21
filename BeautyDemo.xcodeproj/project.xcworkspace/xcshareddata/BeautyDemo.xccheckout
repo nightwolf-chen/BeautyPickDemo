@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>165E1C03-7C9B-4637-A384-736AF4CA3131</string>
+	<key>IDESourceControlProjectName</key>
+	<string>BeautyDemo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>70B59784610891B7D7E8A9D1CB8DE240CD911CE1</key>
+		<string>https://github.com/JunsionGu/BeautyPickDemo.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>BeautyDemo.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>70B59784610891B7D7E8A9D1CB8DE240CD911CE1</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/JunsionGu/BeautyPickDemo.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>70B59784610891B7D7E8A9D1CB8DE240CD911CE1</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>70B59784610891B7D7E8A9D1CB8DE240CD911CE1</string>
+			<key>IDESourceControlWCCName</key>
+			<string>BeautyPickDemo</string>
+		</dict>
+	</array>
+</dict>
+</plist>
