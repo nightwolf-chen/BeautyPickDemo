@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "NFBeatyImageLoader.h"
 
 @implementation AppDelegate
 @synthesize splashView;
@@ -23,6 +24,9 @@
     splashView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 320, Screen_height)];
     [splashView setImage:[UIImage imageNamed:@"fetchBg.png"]];
     
+    [[NFBeatyImageLoader shareInstance] loadImages:@"性感" page:1 completion:^(BOOL succ,id obj){
+        
+    }];
     
     return YES;
 }

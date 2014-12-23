@@ -127,7 +127,6 @@
         //文件不存在, 新建并且写入数据。
         //利用用户信息, 查询结果
         NSString* urlString = [NSString stringWithFormat:@"http://image.baidu.com/channel/listjson?pn=%d&rn=10&tag1=美女&tag2=%@", nowPage, [chooseArr objectAtIndex:nowChoose]];
-        
         urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         NSURL *url = [NSURL URLWithString:urlString];
         testRequest = [ASIHTTPRequest requestWithURL:url];

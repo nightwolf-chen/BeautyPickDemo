@@ -93,6 +93,9 @@
 		1855A2FA1973C562002FCB1D /* initArr.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1855A2F81973C562002FCB1D /* initArr.plist */; };
 		1855A2FB1973C562002FCB1D /* myLove.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1855A2F91973C562002FCB1D /* myLove.plist */; };
 		187F4F031975453D008D356B /* fetchBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 187F4F021975453D008D356B /* fetchBg.png */; };
+		5E3329686EAFE10697D0E0E0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B06855751BC795DA9D07A8ED /* libPods.a */; };
+		F2EA5AEC1A4914BD00A9F5AA /* NFBeatyImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = F2EA5AEB1A4914BD00A9F5AA /* NFBeatyImageLoader.m */; };
+		F2EA5AEF1A4948A200A9F5AA /* NFImageInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F2EA5AEE1A4948A200A9F5AA /* NFImageInfo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -251,6 +254,13 @@
 		1855A2F81973C562002FCB1D /* initArr.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = initArr.plist; sourceTree = "<group>"; };
 		1855A2F91973C562002FCB1D /* myLove.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = myLove.plist; sourceTree = "<group>"; };
 		187F4F021975453D008D356B /* fetchBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fetchBg.png; sourceTree = "<group>"; };
+		77A66F5B2BD9E8C298202C59 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		AFDADF53C4B053DAB25D3381 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		B06855751BC795DA9D07A8ED /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2EA5AEA1A4914BD00A9F5AA /* NFBeatyImageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFBeatyImageLoader.h; sourceTree = "<group>"; };
+		F2EA5AEB1A4914BD00A9F5AA /* NFBeatyImageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFBeatyImageLoader.m; sourceTree = "<group>"; };
+		F2EA5AED1A4948A200A9F5AA /* NFImageInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFImageInfo.h; sourceTree = "<group>"; };
+		F2EA5AEE1A4948A200A9F5AA /* NFImageInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFImageInfo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,6 +275,7 @@
 				1855A1EB1973BD96002FCB1D /* CoreGraphics.framework in Frameworks */,
 				1855A1ED1973BD96002FCB1D /* UIKit.framework in Frameworks */,
 				1855A1E91973BD96002FCB1D /* Foundation.framework in Frameworks */,
+				5E3329686EAFE10697D0E0E0 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +299,7 @@
 				1855A20D1973BD96002FCB1D /* BeautyDemoTests */,
 				1855A1E71973BD96002FCB1D /* Frameworks */,
 				1855A1E61973BD96002FCB1D /* Products */,
+				942F43033294069185E03287 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -311,6 +323,7 @@
 				1855A1EA1973BD96002FCB1D /* CoreGraphics.framework */,
 				1855A1EC1973BD96002FCB1D /* UIKit.framework */,
 				1855A2071973BD96002FCB1D /* XCTest.framework */,
+				B06855751BC795DA9D07A8ED /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -318,6 +331,7 @@
 		1855A1EE1973BD96002FCB1D /* BeautyDemo */ = {
 			isa = PBXGroup;
 			children = (
+				F2EA5AE91A49149300A9F5AA /* data source */,
 				1855A2F71973C54F002FCB1D /* 默认数据 */,
 				1855A2E71973C421002FCB1D /* 主界面 */,
 				1855A2BD1973C18C002FCB1D /* 网络请求ASI */,
@@ -696,6 +710,26 @@
 			name = "默认数据";
 			sourceTree = "<group>";
 		};
+		942F43033294069185E03287 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AFDADF53C4B053DAB25D3381 /* Pods.debug.xcconfig */,
+				77A66F5B2BD9E8C298202C59 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F2EA5AE91A49149300A9F5AA /* data source */ = {
+			isa = PBXGroup;
+			children = (
+				F2EA5AEA1A4914BD00A9F5AA /* NFBeatyImageLoader.h */,
+				F2EA5AEB1A4914BD00A9F5AA /* NFBeatyImageLoader.m */,
+				F2EA5AED1A4948A200A9F5AA /* NFImageInfo.h */,
+				F2EA5AEE1A4948A200A9F5AA /* NFImageInfo.m */,
+			);
+			name = "data source";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -703,9 +737,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1855A2171973BD96002FCB1D /* Build configuration list for PBXNativeTarget "BeautyDemo" */;
 			buildPhases = (
+				DB40BE746C2C1BF17F4C8EFD /* Check Pods Manifest.lock */,
 				1855A1E11973BD96002FCB1D /* Sources */,
 				1855A1E21973BD96002FCB1D /* Frameworks */,
 				1855A1E31973BD96002FCB1D /* Resources */,
+				E5CC22AAA882502130AAD3DB /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -822,6 +858,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		DB40BE746C2C1BF17F4C8EFD /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E5CC22AAA882502130AAD3DB /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1855A1E11973BD96002FCB1D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -865,12 +934,14 @@
 				1855A2B71973C0B8002FCB1D /* NSString+FontAwesome.m in Sources */,
 				1855A22D1973BEB3002FCB1D /* PhotoStackView.m in Sources */,
 				1855A2D41973C19C002FCB1D /* ASIDataCompressor.m in Sources */,
+				F2EA5AEC1A4914BD00A9F5AA /* NFBeatyImageLoader.m in Sources */,
 				1855A2441973BF53002FCB1D /* ACBaseViewController.m in Sources */,
 				1855A26D1973BF90002FCB1D /* UIImage+AspectFit.m in Sources */,
 				1855A2DA1973C19C002FCB1D /* ASINetworkQueue.m in Sources */,
 				1855A2A11973BFB8002FCB1D /* UIButton+WebCache.m in Sources */,
 				1855A2AD1973BFCA002FCB1D /* ImageWaterView.m in Sources */,
 				1855A2841973BFAC002FCB1D /* UIScrollView+SVInfiniteScrolling.m in Sources */,
+				F2EA5AEF1A4948A200A9F5AA /* NFImageInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -936,7 +1007,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Li Yulong (WUXMB9ZMPQ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Li Yulong (WUXMB9ZMPQ)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -954,6 +1026,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "e2736680-f3e5-4c1d-bff8-1e90a61432d4";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -985,6 +1058,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PROVISIONING_PROFILE = "e2736680-f3e5-4c1d-bff8-1e90a61432d4";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -992,19 +1066,23 @@
 		};
 		1855A2181973BD96002FCB1D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AFDADF53C4B053DAB25D3381 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Li Yulong (WUXMB9ZMPQ)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BeautyDemo/BeautyDemo-Prefix.pch";
 				INFOPLIST_FILE = "BeautyDemo/BeautyDemo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "e2736680-f3e5-4c1d-bff8-1e90a61432d4";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
 		1855A2191973BD96002FCB1D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77A66F5B2BD9E8C298202C59 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1012,6 +1090,7 @@
 				GCC_PREFIX_HEADER = "BeautyDemo/BeautyDemo-Prefix.pch";
 				INFOPLIST_FILE = "BeautyDemo/BeautyDemo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "e2736680-f3e5-4c1d-bff8-1e90a61432d4";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
