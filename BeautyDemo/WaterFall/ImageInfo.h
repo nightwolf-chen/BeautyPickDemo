@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class NFImageInfo;
+
 @interface ImageInfo : NSObject
 
 @property float width;

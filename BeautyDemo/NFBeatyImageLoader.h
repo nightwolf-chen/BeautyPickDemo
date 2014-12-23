@@ -14,6 +14,8 @@ typedef void (^FLBeatyImageLoaderCompletion)(BOOL succ,id obj);
 
 + (instancetype)shareInstance;
 
-- (void)loadImages:(NSString *)categoryName page:(NSUInteger)pageNum completion:(FLBeatyImageLoaderCompletion)block;
+- (void)loadImages:(NSString *)categoryName
+              page:(NSUInteger)pageNum
+        completion:(FLBeatyImageLoaderCompletion)block;
 
 @end

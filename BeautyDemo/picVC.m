@@ -7,6 +7,9 @@
 //
 
 #import "picVC.h"
+#import "NFBeatyImageLoader.h"
+#import "NFImageInfo.h"
+#import "NFImageResponse.h"
 
 @interface picVC ()
 
@@ -63,11 +66,7 @@
         [self performSegueWithIdentifier:@"showMyLove" sender:self];
         return;
     }
-
     nowChoose = (int)btnNumber;
-    
-    
-    
     
     //修改标题
     self.navigationItem.title = [chooseArr objectAtIndex:nowChoose];
@@ -83,7 +82,7 @@
 
 -(void)theBGMaskTapped
 {
-    // 触摸背景遮罩时，需要通过回调，旋回加号图片
+    //触摸背景遮罩时，需要通过回调，旋回加号图片
     [self rotatePlusIV];
 }
 
@@ -124,21 +123,16 @@
     }
     else
     {
-        //文件不存在, 新建并且写入数据。
-        //利用用户信息, 查询结果
-        NSString* urlString = [NSString stringWithFormat:@"http://image.baidu.com/channel/listjson?pn=%d&rn=10&tag1=美女&tag2=%@", nowPage, [chooseArr objectAtIndex:nowChoose]];
-        urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-        NSURL *url = [NSURL URLWithString:urlString];
-        testRequest = [ASIHTTPRequest requestWithURL:url];
-        [testRequest setDelegate:self];
-        [testRequest startAsynchronous];
-        NSString *path = [[NSBundle mainBundle]pathForResource:@"initArr" ofType:@"plist"];
-        // Load the file content and read the data into arrays
-        picArr= [[NSMutableArray alloc] initWithContentsOfFile:path];
+        [[NFBeatyImageLoader shareInstance] loadImages:chooseArr[nowChoose]
+                                                  page:nowPage
+                                            completion:^(BOOL success,id obj){
+                                                NFImageResponse *resp = obj;
+                                                [self loadNextPage:[self adpatedImageInfos:resp.imageInfos]];
+                                            }];
     }
     
-    self.waterView = [[ImageWaterView alloc]initWithDataArray:testArr withFrame:CGRectMake(0, 44, 320, Screen_height-44)];
-    
+    self.waterView = [[ImageWaterView alloc]initWithDataArray:testArr
+                                                    withFrame:CGRectMake(0, 44, 320, Screen_height-44)];
     self.waterView.delegate = self;
     [self.view addSubview:self.waterView];
     
@@ -178,17 +172,16 @@
     nowPage = 1;
     
     nowPage = arc4random() % 20;
-    //利用用户信息, 查询结果
-    NSString* urlString = [NSString stringWithFormat:@"http://image.baidu.com/channel/listjson?pn=%d&rn=10&tag1=美女&tag2=%@", nowPage, [chooseArr objectAtIndex:nowChoose]];
-    
-    urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSURL *url = [NSURL URLWithString:urlString];
-    testRequest = [ASIHTTPRequest requestWithURL:url];
-    [testRequest setDelegate:self];
-    [testRequest startAsynchronous];
-    
-    self.waterView = [[ImageWaterView alloc]initWithDataArray:testArr withFrame:CGRectMake(0, 44, 320, Screen_height-44)];
-    
+   
+    [[NFBeatyImageLoader shareInstance] loadImages:chooseArr[nowChoose]
+                                              page:nowPage
+                                        completion:^(BOOL success,id obj){
+                                            NFImageResponse *resp = obj;
+                                            [self loadNextPage:[self adpatedImageInfos:resp.imageInfos]];
+                                        }];
+
+    self.waterView = [[ImageWaterView alloc]initWithDataArray:testArr
+                                                    withFrame:CGRectMake(0, 44, 320, Screen_height-44)];
     self.waterView.delegate = self;
     [self.view addSubview:self.waterView];
     
@@ -400,22 +393,27 @@
         else    //读取完本地的
         {
             nowPage+=30;
-            //利用用户信息, 查询结果
-            NSString* urlString = [NSString stringWithFormat:@"http://image.baidu.com/channel/listjson?pn=%d&rn=10&tag1=美女&tag2=%@", nowPage, [chooseArr objectAtIndex:nowChoose]];
-            urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-            NSURL *url = [NSURL URLWithString:urlString];
-            testRequest = [ASIHTTPRequest requestWithURL:url];
-            [testRequest setDelegate:self];
-            [testRequest startAsynchronous];
+            [[NFBeatyImageLoader shareInstance] loadImages:chooseArr[nowChoose]
+                                                      page:nowPage
+                                                completion:^(BOOL success,id obj){
+                                                    NFImageResponse *resp = obj;
+                                                    [self loadNextPage:[self adpatedImageInfos:resp.imageInfos]];
+                                                }];
         }
     }
     
-
     // 2.2秒后刷新表格UI
     [self performSelector:@selector(doneWithView:) withObject:refreshView afterDelay:2.0];
 }
 
-
+- (NSArray *)adpatedImageInfos:(NSArray *)imageInfos
+{
+    NSMutableArray *tmpArray = [NSMutableArray array];
+    for(NFImageInfo *nfImageInfo in imageInfos){
+        [tmpArray addObject:[nfImageInfo imageInfo]];
+    }
+    return tmpArray;
+}
 
 #pragma mark - UIViewControllerTransitioningDelegate methods
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
@@ -437,8 +435,11 @@
 -(void)showImage:(ImageInfo*)data
 {
     NSURL *url = [NSURL URLWithString:data.thumbURL];
-    [clickImage setImageWithURL:url placeholderImage:nil];
-    TGRImageViewController *viewController = [[TGRImageViewController alloc] initWithImage:clickImage.image setImageInfo:data];
+    [clickImage setImageWithURL:url
+               placeholderImage:nil];
+    
+    TGRImageViewController *viewController = [[TGRImageViewController alloc] initWithImage:clickImage.image
+                                                                              setImageInfo:data];
     viewController.transitioningDelegate = self;
     [self presentViewController:viewController animated:YES completion:nil];
 }
@@ -557,6 +558,12 @@
     [blockSelf.waterView.infiniteScrollingView stopAnimating];
 }
 
+- (void)loadNextPage:(NSArray *)imageInfos
+{
+    [_waterView loadNextPage:imageInfos];
+    [_waterView.infiniteScrollingView stopAnimating];
+}
+
 
 //弹出框自动消失
 - (void)timerFireMethod:(NSTimer*)theTimer//弹出框
@@ -569,7 +576,6 @@
 - (void)requestFailed:(ASIHTTPRequest *)request
 {
     NSError *error = [request error];
-    
     UIAlertView *promptAlert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"系统繁忙, 请稍后重试"  delegate:nil cancelButtonTitle:nil otherButtonTitles:nil];
     
     [NSTimer scheduledTimerWithTimeInterval:1.5f
@@ -584,7 +590,6 @@
         //切换视图
         [self initWallView];
         [self initWallView];
-
         
         isRefresh_ = false;
     }
@@ -606,15 +611,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

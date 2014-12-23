@@ -7,6 +7,8 @@
 //
 
 #import "ImageInfo.h"
+#import "NFImageInfo.h"
+
 @implementation ImageInfo
 -(id)initWithDictionary:(NSDictionary*)dictionary
 {

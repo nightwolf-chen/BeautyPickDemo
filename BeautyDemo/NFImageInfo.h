@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class ImageInfo;
+
 @interface NFImageInfo : NSObject
 
 @property (nonatomic,copy) NSString *imageId;
@@ -34,5 +36,7 @@
 
 
 - (id)initWithDictionary:(NSDictionary *)dic;
+
+- (ImageInfo *)imageInfo;
 
 @end

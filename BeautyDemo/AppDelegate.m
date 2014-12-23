@@ -15,12 +15,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    
-    
     [self.window makeKeyAndVisible];
     //设置后台获取
     [application setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
-    
     splashView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 320, Screen_height)];
     [splashView setImage:[UIImage imageNamed:@"fetchBg.png"]];
     

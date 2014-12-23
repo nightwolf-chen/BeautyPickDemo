@@ -57,8 +57,10 @@ static NSString *(^imageUrl)(NSString*,NSUInteger) = ^(NSString *categoryName,NS
         block(NO,err);
     };
     
-    
-    [_networkManager GET:requestUrl parameters:nil success:successBlock failure:failureBlock];
+    [_networkManager GET:requestUrl
+              parameters:nil
+                 success:successBlock
+                 failure:failureBlock];
 }
 
 @end

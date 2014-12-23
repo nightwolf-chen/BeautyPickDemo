@@ -18,7 +18,7 @@
         _subTag = dic[@"tag2"];
         _totalCount = [dic[@"totalNum"] integerValue];
         _startIndex = [dic[@"start_index"] integerValue];
-        _imagesCount = [dic[@"return_numer"] integerValue];
+        _imagesCount = [dic[@"return_number"] integerValue];
         
         NSArray *imagesData = dic[@"data"];
         NSMutableArray *imageInfos = [NSMutableArray array];

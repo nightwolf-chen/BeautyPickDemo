@@ -7,6 +7,7 @@
 //
 
 #import "NFImageInfo.h"
+#import "ImageInfo.h"
 
 @implementation NFImageInfo
 
@@ -37,6 +38,17 @@
     }
     
     return self;
+}
+
+- (ImageInfo *)imageInfo
+{
+    ImageInfo *info = [[ImageInfo alloc] init];
+    info.width = _imageWidth;
+    info.height = _imageHeight;
+    info.thumbURL = _imageUrl;
+    info.title = _desc;
+    
+    return info;
 }
 
 
