@@ -6,8 +6,9 @@
 //  Copyright (c) 2014 icephone. All rights reserved.
 //
 
-#import "NFBeatyImageLoader.h"
 #import <AFNetworking.h>
+#import "NFBeatyImageLoader.h"
+#import "NFImageResponse.h"
 
 static NSString *(^imageUrl)(NSString*,NSUInteger) = ^(NSString *categoryName,NSUInteger pageNum){
     NSString* urlString = [NSString stringWithFormat:@"http://image.baidu.com/channel/listjson?pn=%lu&rn=10&tag1=美女&tag2=%@", (unsigned long)pageNum,categoryName];
@@ -48,7 +49,8 @@ static NSString *(^imageUrl)(NSString*,NSUInteger) = ^(NSString *categoryName,NS
     NSString *requestUrl = imageUrl(categoryName,pageNum);
     
     void (^successBlock)(AFHTTPRequestOperation *,id) = ^(AFHTTPRequestOperation *op,id obj){
-        block(YES,obj);
+        NFImageResponse *imageResp = [[NFImageResponse alloc] initWithDictionary:obj];
+        block(YES,imageResp);
     };
     
     void (^failureBlock)(AFHTTPRequestOperation *,NSError *) = ^(AFHTTPRequestOperation *op,NSError * err){

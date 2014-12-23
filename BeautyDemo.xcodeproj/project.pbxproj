@@ -96,6 +96,7 @@
 		5E3329686EAFE10697D0E0E0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B06855751BC795DA9D07A8ED /* libPods.a */; };
 		F2EA5AEC1A4914BD00A9F5AA /* NFBeatyImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = F2EA5AEB1A4914BD00A9F5AA /* NFBeatyImageLoader.m */; };
 		F2EA5AEF1A4948A200A9F5AA /* NFImageInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F2EA5AEE1A4948A200A9F5AA /* NFImageInfo.m */; };
+		F2EA5B021A4955EA00A9F5AA /* NFImageResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = F2EA5B011A4955EA00A9F5AA /* NFImageResponse.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -261,6 +262,8 @@
 		F2EA5AEB1A4914BD00A9F5AA /* NFBeatyImageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFBeatyImageLoader.m; sourceTree = "<group>"; };
 		F2EA5AED1A4948A200A9F5AA /* NFImageInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFImageInfo.h; sourceTree = "<group>"; };
 		F2EA5AEE1A4948A200A9F5AA /* NFImageInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFImageInfo.m; sourceTree = "<group>"; };
+		F2EA5B001A4955EA00A9F5AA /* NFImageResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFImageResponse.h; sourceTree = "<group>"; };
+		F2EA5B011A4955EA00A9F5AA /* NFImageResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFImageResponse.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -726,6 +729,8 @@
 				F2EA5AEB1A4914BD00A9F5AA /* NFBeatyImageLoader.m */,
 				F2EA5AED1A4948A200A9F5AA /* NFImageInfo.h */,
 				F2EA5AEE1A4948A200A9F5AA /* NFImageInfo.m */,
+				F2EA5B001A4955EA00A9F5AA /* NFImageResponse.h */,
+				F2EA5B011A4955EA00A9F5AA /* NFImageResponse.m */,
 			);
 			name = "data source";
 			sourceTree = "<group>";
@@ -939,6 +944,7 @@
 				1855A26D1973BF90002FCB1D /* UIImage+AspectFit.m in Sources */,
 				1855A2DA1973C19C002FCB1D /* ASINetworkQueue.m in Sources */,
 				1855A2A11973BFB8002FCB1D /* UIButton+WebCache.m in Sources */,
+				F2EA5B021A4955EA00A9F5AA /* NFImageResponse.m in Sources */,
 				1855A2AD1973BFCA002FCB1D /* ImageWaterView.m in Sources */,
 				1855A2841973BFAC002FCB1D /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				F2EA5AEF1A4948A200A9F5AA /* NFImageInfo.m in Sources */,
