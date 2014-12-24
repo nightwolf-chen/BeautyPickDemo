@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NFImageResponse.h"
+#import "NFImageInfo.h"
 
 typedef void (^FLBeatyImageLoaderCompletion)(BOOL succ,id obj);
 

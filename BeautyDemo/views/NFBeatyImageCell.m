@@ -17,15 +17,19 @@
 {
     if (self = [super initWithTableView:tableView width:width]) {
         _imageViewMain = [[UIImageView alloc] initWithFrame:self.bounds];
-        _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0,self.bounds.size.width,kTitleHeight)];
-        _descLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, self.bounds.size.height-kDescHeight, self.bounds.size.width, kDescHeight)];
+        _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,0,width,kTitleHeight)];
+        _descLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,
+                                                               self.bounds.size.height-kDescHeight,
+                                                               width,
+                                                               kDescHeight)];
         
+        _imageViewMain.contentMode = UIViewContentModeScaleAspectFit;
         _titleLabel.backgroundColor = RGBACOLOR(0, 0, 0, 0.5);
         _descLabel.backgroundColor = RGBACOLOR(0, 0, 0, 0.5);
         
         [self addSubview:_imageViewMain];
-        [self addSubview:_titleLabel];
-        [self addSubview:_descLabel];
+        [_imageViewMain addSubview:_titleLabel];
+        [_imageViewMain addSubview:_descLabel];
     }
     
     return self;

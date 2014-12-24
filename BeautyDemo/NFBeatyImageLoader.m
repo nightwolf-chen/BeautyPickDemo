@@ -50,17 +50,28 @@ static NSString *(^imageUrl)(NSString*,NSUInteger) = ^(NSString *categoryName,NS
     
     void (^successBlock)(AFHTTPRequestOperation *,id) = ^(AFHTTPRequestOperation *op,id obj){
         NFImageResponse *imageResp = [[NFImageResponse alloc] initWithDictionary:obj];
-        block(YES,imageResp);
+        [self notifyBlock:block
+                  success:YES
+                      obj:imageResp];
     };
     
     void (^failureBlock)(AFHTTPRequestOperation *,NSError *) = ^(AFHTTPRequestOperation *op,NSError * err){
-        block(NO,err);
+        [self notifyBlock:block
+                  success:NO
+                      obj:err];
     };
     
     [_networkManager GET:requestUrl
               parameters:nil
                  success:successBlock
                  failure:failureBlock];
+}
+
+- (void)notifyBlock:(FLBeatyImageLoaderCompletion)block success:(BOOL)suc obj:(id)obj
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        block(suc,obj);
+    });
 }
 
 @end

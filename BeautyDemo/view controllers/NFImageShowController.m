@@ -9,9 +9,11 @@
 #import "NFImageShowController.h"
 #import "PSHorizontalTableView.h"
 #import "NFBeatyImageCell.h"
+#import "NFBeatyImageLoader.h"
+#import "UIImageView+WebCache.h"
 
-#define kTableViewHeight  300
-#define kTableViewOriginY (SCREEN_HEIGHT*0.2)
+
+#define kTableViewOriginY (SCREEN_HEIGHT*0)
 #define kTableCellWidth SCREEN_WIDTH
 
 @interface NFImageShowController ()
@@ -23,6 +25,15 @@
 
 @implementation NFImageShowController
 
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    if (self = [super initWithNibName:nil bundle:nil]) {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
+    
+    return self;
+}
+
 #pragma mark - Setup views
 - (void)setupViews
 {
@@ -31,15 +42,27 @@
 
 - (void)setupTableView
 {
-    self.tableView = [[PSHorizontalTableView alloc] initWithFrame:CGRectMake(0,kTableViewOriginY,SCREEN_WIDTH,kTableViewHeight)];
+    CGFloat kTableViewHeight = self.view.frame.size.height;
+    self.tableView = [[PSHorizontalTableView alloc] initWithFrame:CGRectMake(0,
+                                                                             kTableViewOriginY,
+                                                                             kTableCellWidth,
+                                                                             kTableViewHeight)];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.pageEnabled = YES;
-    
-    
+    _tableView.scrollView.directionalLockEnabled = YES;
     [self.view addSubview:_tableView];
     
-    [_tableView reloadData];
+    [[NFBeatyImageLoader shareInstance] loadImages:@"性感" page:1 completion:^(BOOL suc,id obj){
+        if (suc) {
+            NFImageResponse *resp = obj;
+            self.imageInfos = resp.imageInfos;
+            [_tableView reloadData];
+        }else{
+            NSLog(@"load images falied!");
+        }
+    }];
+    
 }
 
 - (void)viewDidLoad {
@@ -60,9 +83,6 @@
 
 - (NSUInteger)numberOfColums:(PSHorizontalTableView *)tableView
 {
-#ifdef DEBUG
-    return 3;
-#endif
     return _imageInfos.count;
 }
 
@@ -72,6 +92,11 @@
     if (!cell) {
         cell = [[NFBeatyImageCell alloc] initWithTableView:tableView width:kTableCellWidth];
     }
+    
+    NFImageInfo *imageInfo = _imageInfos[index];
+    NFBeatyImageCell *beatyCell = (NFBeatyImageCell *)cell;
+    [beatyCell.imageViewMain setImageWithURL:[NSURL URLWithString:imageInfo.imageUrl]];
+    
     return cell;
 }
 

@@ -15,6 +15,7 @@
 @protocol PSHorizontalTableViewDelegate;
 
 @interface PSHorizontalTableView : UIView
+@property (nonatomic,strong) UIScrollView *scrollView;
 @property (nonatomic,weak) id<PSHorizontalTableViewDelegate> delegate;
 @property (nonatomic,weak) id<PSHorizontalTableViewDataSource> dataSource;
 @property (nonatomic,assign) BOOL pageEnabled;

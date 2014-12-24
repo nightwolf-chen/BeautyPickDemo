@@ -35,7 +35,6 @@ NSString* (^stringIndex)(NSInteger) = ^NSString* (NSInteger x){
 //////////////////////////////////////////////////////////////////////////////
 //PSHorizontalTableView
 @interface PSHorizontalTableView ()
-@property (nonatomic,strong) UIScrollView *scrollView;
 @property (nonatomic,strong) NSArray *columModels;
 @property (nonatomic,strong) NSMutableDictionary *activeColums;
 @property (nonatomic,strong) NSMutableSet *resuableColumes;
@@ -47,7 +46,8 @@ NSString* (^stringIndex)(NSInteger) = ^NSString* (NSInteger x){
 
 - (void)dealloc
 {
-    [_scrollView removeObserver:self forKeyPath:NSStringFromSelector(@selector(contentOffset))];
+    [_scrollView removeObserver:self
+                     forKeyPath:NSStringFromSelector(@selector(contentOffset))];
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -57,7 +57,7 @@ NSString* (^stringIndex)(NSInteger) = ^NSString* (NSInteger x){
         _scrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
         
         _scrollView.showsHorizontalScrollIndicator = NO;
-        _scrollView.showsHorizontalScrollIndicator = NO;
+        _scrollView.showsVerticalScrollIndicator = NO;
         
         [self addSubview:_scrollView];
         
