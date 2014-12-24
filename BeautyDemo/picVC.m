@@ -132,7 +132,7 @@
     }
     
     self.waterView = [[ImageWaterView alloc]initWithDataArray:testArr
-                                                    withFrame:CGRectMake(0, 44, 320, Screen_height-44)];
+                                                    withFrame:CGRectMake(0, 44, 320, SCREEN_HEIGHT-44)];
     self.waterView.delegate = self;
     [self.view addSubview:self.waterView];
     
@@ -176,12 +176,15 @@
     [[NFBeatyImageLoader shareInstance] loadImages:chooseArr[nowChoose]
                                               page:nowPage
                                         completion:^(BOOL success,id obj){
+                                            if (!success) {
+                                                return ;
+                                            }
                                             NFImageResponse *resp = obj;
                                             [self loadNextPage:[self adpatedImageInfos:resp.imageInfos]];
                                         }];
 
     self.waterView = [[ImageWaterView alloc]initWithDataArray:testArr
-                                                    withFrame:CGRectMake(0, 44, 320, Screen_height-44)];
+                                                    withFrame:CGRectMake(0, 44, 320, SCREEN_HEIGHT-44)];
     self.waterView.delegate = self;
     [self.view addSubview:self.waterView];
     
@@ -260,7 +263,7 @@
     }
     nowPage = [picArr count];
     
-    self.waterView = [[ImageWaterView alloc]initWithDataArray:testArr withFrame:CGRectMake(0, 44, 320, Screen_height-44)];
+    self.waterView = [[ImageWaterView alloc]initWithDataArray:testArr withFrame:CGRectMake(0, 44, 320, SCREEN_HEIGHT-44)];
     
     self.waterView.delegate = self;
     [self.view addSubview:self.waterView];

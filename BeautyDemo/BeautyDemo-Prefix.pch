@@ -11,13 +11,14 @@
 #endif
 
 
-#define Screen_height   [[UIScreen mainScreen] bounds].size.height
 
 
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+    #import "FMMacros.h"
 #endif
 
 
 #import "AppImport.h"
+
