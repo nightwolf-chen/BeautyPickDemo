@@ -12,6 +12,8 @@
 		125B62E51A4AA8BE0096ECB6 /* NFImageShowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 125B62E31A4AA8BE0096ECB6 /* NFImageShowController.m */; };
 		125B62E61A4AA8BE0096ECB6 /* NFImageShowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 125B62E41A4AA8BE0096ECB6 /* NFImageShowController.xib */; };
 		125B62E91A4ABB480096ECB6 /* NFBeatyImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 125B62E81A4ABB480096ECB6 /* NFBeatyImageCell.m */; };
+		125B630E1A4BF8200096ECB6 /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 125B630D1A4BF8200096ECB6 /* UIView+Layout.m */; };
+		125B63111A4C00A60096ECB6 /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = 125B63101A4C00A60096ECB6 /* UIColor+HexString.m */; };
 		1855A1E91973BD96002FCB1D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1855A1E81973BD96002FCB1D /* Foundation.framework */; };
 		1855A1EB1973BD96002FCB1D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1855A1EA1973BD96002FCB1D /* CoreGraphics.framework */; };
 		1855A1ED1973BD96002FCB1D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1855A1EC1973BD96002FCB1D /* UIKit.framework */; };
@@ -125,6 +127,10 @@
 		125B62E41A4AA8BE0096ECB6 /* NFImageShowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NFImageShowController.xib; sourceTree = "<group>"; };
 		125B62E71A4ABB480096ECB6 /* NFBeatyImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NFBeatyImageCell.h; path = ../views/NFBeatyImageCell.h; sourceTree = "<group>"; };
 		125B62E81A4ABB480096ECB6 /* NFBeatyImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NFBeatyImageCell.m; path = ../views/NFBeatyImageCell.m; sourceTree = "<group>"; };
+		125B630C1A4BF8200096ECB6 /* UIView+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layout.h"; sourceTree = "<group>"; };
+		125B630D1A4BF8200096ECB6 /* UIView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
+		125B630F1A4C00A60096ECB6 /* UIColor+HexString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexString.h"; sourceTree = "<group>"; };
+		125B63101A4C00A60096ECB6 /* UIColor+HexString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexString.m"; sourceTree = "<group>"; };
 		1855A1E51973BD96002FCB1D /* BeautyDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeautyDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1855A1E81973BD96002FCB1D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1855A1EA1973BD96002FCB1D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -324,7 +330,11 @@
 		125B62DF1A4A9E4F0096ECB6 /* util */ = {
 			isa = PBXGroup;
 			children = (
+				125B630F1A4C00A60096ECB6 /* UIColor+HexString.h */,
+				125B63101A4C00A60096ECB6 /* UIColor+HexString.m */,
 				125B62E01A4A9E4F0096ECB6 /* FMMacros.h */,
+				125B630C1A4BF8200096ECB6 /* UIView+Layout.h */,
+				125B630D1A4BF8200096ECB6 /* UIView+Layout.m */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -953,6 +963,7 @@
 			files = (
 				1855A2341973BF28002FCB1D /* ACNavBarDrawer.m in Sources */,
 				1855A26C1973BF90002FCB1D /* TGRImageZoomAnimationController.m in Sources */,
+				125B63111A4C00A60096ECB6 /* UIColor+HexString.m in Sources */,
 				1855A2D91973C19C002FCB1D /* ASIInputStream.m in Sources */,
 				1855A2261973BEA4002FCB1D /* SLGSlideshowView.m in Sources */,
 				1855A2A01973BFB8002FCB1D /* SDWebImagePrefetcher.m in Sources */,
@@ -995,6 +1006,7 @@
 				1855A2D41973C19C002FCB1D /* ASIDataCompressor.m in Sources */,
 				F2EA5AEC1A4914BD00A9F5AA /* NFBeatyImageLoader.m in Sources */,
 				1855A2441973BF53002FCB1D /* ACBaseViewController.m in Sources */,
+				125B630E1A4BF8200096ECB6 /* UIView+Layout.m in Sources */,
 				1855A26D1973BF90002FCB1D /* UIImage+AspectFit.m in Sources */,
 				1855A2DA1973C19C002FCB1D /* ASINetworkQueue.m in Sources */,
 				1855A2A11973BFB8002FCB1D /* UIButton+WebCache.m in Sources */,
@@ -1086,7 +1098,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "19049E3D-F17C-4602-BF4B-7424F8E782F0";
+				PROVISIONING_PROFILE = "6d866c22-4e7c-4038-a535-e7f72f326161";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1118,7 +1130,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				PROVISIONING_PROFILE = "19049E3D-F17C-4602-BF4B-7424F8E782F0";
+				PROVISIONING_PROFILE = "6d866c22-4e7c-4038-a535-e7f72f326161";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1135,7 +1147,7 @@
 				GCC_PREFIX_HEADER = "BeautyDemo/BeautyDemo-Prefix.pch";
 				INFOPLIST_FILE = "BeautyDemo/BeautyDemo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "19049E3D-F17C-4602-BF4B-7424F8E782F0";
+				PROVISIONING_PROFILE = "6d866c22-4e7c-4038-a535-e7f72f326161";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1150,7 +1162,7 @@
 				GCC_PREFIX_HEADER = "BeautyDemo/BeautyDemo-Prefix.pch";
 				INFOPLIST_FILE = "BeautyDemo/BeautyDemo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "19049E3D-F17C-4602-BF4B-7424F8E782F0";
+				PROVISIONING_PROFILE = "6d866c22-4e7c-4038-a535-e7f72f326161";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -1172,7 +1184,7 @@
 				);
 				INFOPLIST_FILE = "BeautyDemoTests/BeautyDemoTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "19049E3D-F17C-4602-BF4B-7424F8E782F0";
+				PROVISIONING_PROFILE = "6d866c22-4e7c-4038-a535-e7f72f326161";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -1191,7 +1203,7 @@
 				GCC_PREFIX_HEADER = "BeautyDemo/BeautyDemo-Prefix.pch";
 				INFOPLIST_FILE = "BeautyDemoTests/BeautyDemoTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "19049E3D-F17C-4602-BF4B-7424F8E782F0";
+				PROVISIONING_PROFILE = "6d866c22-4e7c-4038-a535-e7f72f326161";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};

@@ -28,7 +28,7 @@ NSUInteger (^indexForOffsetX)(CGFloat,CGFloat) = ^NSUInteger (CGFloat x,CGFloat 
 };
 
 NSString* (^stringIndex)(NSInteger) = ^NSString* (NSInteger x){
-    return [NSString stringWithFormat:@"%ld",x];
+    return [NSString stringWithFormat:@"%d",x];
 };
 
 

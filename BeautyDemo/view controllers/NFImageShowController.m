@@ -13,7 +13,6 @@
 #import "UIImageView+WebCache.h"
 
 
-#define kTableViewOriginY (SCREEN_HEIGHT*0)
 #define kTableCellWidth SCREEN_WIDTH
 
 @interface NFImageShowController ()
@@ -37,23 +36,31 @@
 #pragma mark - Setup views
 - (void)setupViews
 {
+    [self setupNavigationBar];
     [self setupTableView];
+}
+
+
+- (void)setupNavigationBar
+{
+    self.navigationItem.title = @"每日美女";
 }
 
 - (void)setupTableView
 {
-    CGFloat kTableViewHeight = self.view.frame.size.height;
+    CGFloat kTableViewHeight = self.view.frame.size.height - self.navigationController.navigationBar.frame.size.height;
     self.tableView = [[PSHorizontalTableView alloc] initWithFrame:CGRectMake(0,
-                                                                             kTableViewOriginY,
+                                                                             self.navigationController.navigationBar.frame.size.height,
                                                                              kTableCellWidth,
                                                                              kTableViewHeight)];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.pageEnabled = YES;
     _tableView.scrollView.directionalLockEnabled = YES;
+    _tableView.backgroundColor = RGBCOLOR(232, 184, 204);
     [self.view addSubview:_tableView];
     
-    [[NFBeatyImageLoader shareInstance] loadImages:@"性感" page:1 completion:^(BOOL suc,id obj){
+    [[NFBeatyImageLoader shareInstance] loadImages:@"可爱 " page:10 completion:^(BOOL suc,id obj){
         if (suc) {
             NFImageResponse *resp = obj;
             self.imageInfos = resp.imageInfos;
@@ -62,6 +69,7 @@
             NSLog(@"load images falied!");
         }
     }];
+    
     
 }
 

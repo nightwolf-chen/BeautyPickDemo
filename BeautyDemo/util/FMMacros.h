@@ -18,10 +18,13 @@
 #define RGB(r,g,b) 
 #define RGBA(r,g,b,a)
 
+
 #define STATUSBAR_SIZE [[UIApplication sharedApplication] statusBarFrame].size
 #define STATUSBAR_WIDTH [[UIApplication sharedApplication] statusBarFrame].size.width
 #define STATUSBAR_HEIGHT [[UIApplication sharedApplication] statusBarFrame].size.height
 
 #define APP_DELEGATE ((FMAppDelegate *)[UIApplication sharedApplication].delegate)
+
+#define RECT(x,y,w,h) CGRectMake(x,y,w,h)
 
 #endif
