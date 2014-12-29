@@ -60,7 +60,7 @@
     _tableView.backgroundColor = RGBCOLOR(232, 184, 204);
     [self.view addSubview:_tableView];
     
-    [[NFBeatyImageLoader shareInstance] loadImages:@"可爱 " page:10 completion:^(BOOL suc,id obj){
+    [[NFBeatyImageLoader shareInstance] loadImages:@"气质" page:10 completion:^(BOOL suc,id obj){
         if (suc) {
             NFImageResponse *resp = obj;
             self.imageInfos = resp.imageInfos;
