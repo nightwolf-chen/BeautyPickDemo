@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "NFBeatyImageLoader.h"
 #import "NFImageShowController.h"
+#import "NFHomeController.h"
 
 @implementation AppDelegate
 @synthesize splashView;
@@ -19,20 +20,14 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] ;
     [self.window makeKeyAndVisible];
     
-    NFImageShowController *rootController = [[NFImageShowController alloc] initWithNibName:nil bundle:nil];
     
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:rootController];
     
-    self.window.rootViewController = navigationController;
+    self.window.rootViewController = [[NFHomeController alloc] initWithNibName:nil bundle:nil];
     
     //设置后台获取
     [application setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
     splashView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 320, SCREEN_HEIGHT)];
     [splashView setImage:[UIImage imageNamed:@"fetchBg.png"]];
-    
-    [[NFBeatyImageLoader shareInstance] loadImages:@"性感" page:1 completion:^(BOOL succ,id obj){
-        
-    }];
     
     return YES;
 }
