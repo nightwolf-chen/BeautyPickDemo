@@ -438,11 +438,10 @@
 -(void)showImage:(ImageInfo*)data
 {
     NSURL *url = [NSURL URLWithString:data.thumbURL];
-    [clickImage setImageWithURL:url
-               placeholderImage:nil];
+    [clickImage sd_setImageWithURL:url
+                  placeholderImage:nil];
     
-    TGRImageViewController *viewController = [[TGRImageViewController alloc] initWithImage:clickImage.image
-                                                                              setImageInfo:data];
+    TGRImageViewController *viewController = [[TGRImageViewController alloc] initWithImage:clickImage.image];
     viewController.transitioningDelegate = self;
     [self presentViewController:viewController animated:YES completion:nil];
 }

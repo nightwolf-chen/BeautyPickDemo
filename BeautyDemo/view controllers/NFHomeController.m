@@ -10,6 +10,7 @@
 #import "NFImageShowController.h"
 #import "NFTopRankViewController.h"
 #import "NFUserCenterController.h"
+#import "picVC.h"
 
 @interface NFHomeController ()
 
@@ -20,9 +21,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.viewControllers = @[[[NFTopRankViewController alloc] initWithNibName:nil bundle:nil],
-                             [[NFImageShowController alloc] initWithNibName:nil bundle:nil],
-                             [[NFUserCenterController alloc] initWithNibName:nil bundle:nil]];
+    
+    NSArray *viewControllers = @[[[NFTopRankViewController alloc] initWithNibName:nil bundle:nil],
+                                 [[NFImageShowController alloc] initWithNibName:nil bundle:nil],
+                                 [[NFUserCenterController alloc] initWithNibName:nil bundle:nil]];
+    
+    NSArray *tmpControllers = @[[[picVC alloc] initWithNibName:nil bundle:nil],
+                                 [[NFImageShowController alloc] initWithNibName:nil bundle:nil],
+                                 [[NFUserCenterController alloc] initWithNibName:nil bundle:nil]];
+    
+    self.viewControllers = tmpControllers;
     
 }
 

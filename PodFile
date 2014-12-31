@@ -3,3 +3,5 @@ pod 'SVProgressHUD', :head
 pod 'SVPullToRefresh', :head
 pod 'SDWebImage', '~>3.6'
 pod 'Vertigo'
+pod 'ASIHTTPRequest', '~> 1.8.2'
+pod 'ODRefreshControl',:head
