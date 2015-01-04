@@ -8,6 +8,8 @@
 
 #import "NFBeautyPagingLoader.h"
 
+static const NSUInteger kResultCount = 10;
+
 @interface NFBeautyPagingLoader ()
 @property (nonatomic,copy,readwrite) NSString *tagName;
 @property (nonatomic,assign,readwrite) NSUInteger currentPageNum;
@@ -34,7 +36,7 @@
 {
     FLBeatyImageLoaderCompletion aComletionBlock = ^(BOOL suc,id obj){
         if (suc && obj) {
-            self.currentPageNum = _currentPageNum + 1;
+            self.currentPageNum = _currentPageNum + kResultCount;
         }
         
         completionBlock(suc,obj);
@@ -42,6 +44,7 @@
     
     [[NFBeatyImageLoader shareInstance] loadImages:_tagName
                                               page:_currentPageNum
+                                       resultCount:kResultCount
                                         completion:aComletionBlock];
 }
 

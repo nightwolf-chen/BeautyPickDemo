@@ -14,6 +14,11 @@
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
+		<key>Pods-CHTCollectionViewWaterfallLayout.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>10</integer>
+		</dict>
 		<key>Pods-ODRefreshControl.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -62,6 +67,16 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>25AB590FBD007420E7EC682E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>275FAD27AA29ACD596241665</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>2BAC5392BDB9432C05BD4964</key>
 		<dict>
 			<key>primary</key>
@@ -82,7 +97,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>67EDC6489BB0E13B0EB598D4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>8374844DB47AF3270F900AB1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9DA00F33BA1B04C904BE4C0D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -97,6 +122,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>C3A3EBFD0847072F27DC2578</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>C76621A6EEB3617E0F4D42DB</key>
 		<dict>
 			<key>primary</key>
@@ -107,7 +137,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>CD5E1E50DDE10DD67A57A929</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>CD67C8823B6470A4BFF7FE04</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DA9281A26A1F54C8A9BECF04</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -117,7 +157,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>DC8ADB31B1168D950B860489</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E411C828F4D5A7CD0B72B4E7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>E519D2C241C42BD7CC0517F4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F1C8C3F8BEF3C388DA284C7A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -196,6 +196,7 @@
 		1855A2F81973C562002FCB1D /* initArr.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = initArr.plist; sourceTree = "<group>"; };
 		1855A2F91973C562002FCB1D /* myLove.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = myLove.plist; sourceTree = "<group>"; };
 		187F4F021975453D008D356B /* fetchBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fetchBg.png; sourceTree = "<group>"; };
+		30711DB71A598E6B00873517 /* BeautyDemo copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "BeautyDemo copy-Info.plist"; path = "/Users/nirvawolf/Documents/iOS projects/BeautyPickDemo/BeautyDemo copy-Info.plist"; sourceTree = "<absolute>"; };
 		77A66F5B2BD9E8C298202C59 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		AFDADF53C4B053DAB25D3381 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B06855751BC795DA9D07A8ED /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -294,6 +295,7 @@
 				1855A1E71973BD96002FCB1D /* Frameworks */,
 				1855A1E61973BD96002FCB1D /* Products */,
 				942F43033294069185E03287 /* Pods */,
+				30711DB71A598E6B00873517 /* BeautyDemo copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};

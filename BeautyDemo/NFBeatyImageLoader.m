@@ -10,8 +10,8 @@
 #import "NFBeatyImageLoader.h"
 #import "NFImageResponse.h"
 
-static NSString *(^imageUrl)(NSString*,NSUInteger) = ^(NSString *categoryName,NSUInteger pageNum){
-    NSString* urlString = [NSString stringWithFormat:@"http://image.baidu.com/channel/listjson?pn=%lu&rn=10&tag1=美女&tag2=%@", (unsigned long)pageNum,categoryName];
+static NSString *(^imageUrl)(NSString*,NSUInteger,NSUInteger) = ^(NSString *categoryName,NSUInteger pageNum,NSUInteger resultCount){
+    NSString* urlString = [NSString stringWithFormat:@"http://image.baidu.com/channel/listjson?pn=%lu&rn=%d&tag1=美女&tag2=%@", (unsigned long)pageNum,resultCount,categoryName];
     return [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 };
 
@@ -44,9 +44,12 @@ static NSString *(^imageUrl)(NSString*,NSUInteger) = ^(NSString *categoryName,NS
     return self;
 }
 
-- (void)loadImages:(NSString *)categoryName page:(NSUInteger)pageNum completion:(FLBeatyImageLoaderCompletion)block
+- (void)loadImages:(NSString *)categoryName
+              page:(NSUInteger)pageNum
+       resultCount:(NSUInteger)count
+        completion:(FLBeatyImageLoaderCompletion)block
 {
-    NSString *requestUrl = imageUrl(categoryName,pageNum);
+    NSString *requestUrl = imageUrl(categoryName,pageNum,count);
     
     void (^successBlock)(AFHTTPRequestOperation *,id) = ^(AFHTTPRequestOperation *op,id obj){
         NFImageResponse *imageResp = [[NFImageResponse alloc] initWithDictionary:obj];
@@ -65,6 +68,13 @@ static NSString *(^imageUrl)(NSString*,NSUInteger) = ^(NSString *categoryName,NS
               parameters:nil
                  success:successBlock
                  failure:failureBlock];
+}
+
+- (void)loadImages:(NSString *)categoryName
+              page:(NSUInteger)pageNum
+        completion:(FLBeatyImageLoaderCompletion)block
+{
+    [self loadImages:categoryName page:pageNum resultCount:10 completion:block];
 }
 
 - (void)notifyBlock:(FLBeatyImageLoaderCompletion)block success:(BOOL)suc obj:(id)obj

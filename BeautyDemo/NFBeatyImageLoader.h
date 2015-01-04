@@ -20,4 +20,9 @@ typedef void (^FLBeatyImageLoaderCompletion)(BOOL succ,id obj);
               page:(NSUInteger)pageNum
         completion:(FLBeatyImageLoaderCompletion)block;
 
+- (void)loadImages:(NSString *)categoryName
+              page:(NSUInteger)pageNum
+       resultCount:(NSUInteger)count
+        completion:(FLBeatyImageLoaderCompletion)block;
+
 @end
