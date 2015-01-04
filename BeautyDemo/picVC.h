@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 #import "ImageWaterView.h"
-#import "JSONKit.h"
 #import "SVPullToRefresh.h"
 
 #import "ASIHTTPRequest.h"

@@ -3,7 +3,7 @@
 //  BeautyDemo
 //
 //  Created by exitingchen on 14/12/29.
-//  Copyright (c) 2014年 icephone. All rights reserved.
+//  Copyright (c) 2014年 nirvawolf. All rights reserved.
 //
 
 #import "NFUserCenterController.h"

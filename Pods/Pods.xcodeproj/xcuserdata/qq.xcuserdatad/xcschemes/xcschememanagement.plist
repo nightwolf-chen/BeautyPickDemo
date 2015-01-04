@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-CHTCollectionViewWaterfallLayout.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-ODRefreshControl.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,47 +57,52 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>07C72BFDF92559BF292E1CA0</key>
+		<key>25AB590FBD007420E7EC682E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2BAC5392BDB9432C05BD4964</key>
+		<key>275FAD27AA29ACD596241665</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>307BDCDF3B1DE0B143C4BD8B</key>
+		<key>67EDC6489BB0E13B0EB598D4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>385E38BCDFD977F3107B78CB</key>
+		<key>9DA00F33BA1B04C904BE4C0D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8374844DB47AF3270F900AB1</key>
+		<key>C3A3EBFD0847072F27DC2578</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B4314204E34877433D7262CD</key>
+		<key>CD5E1E50DDE10DD67A57A929</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C76621A6EEB3617E0F4D42DB</key>
+		<key>DA9281A26A1F54C8A9BECF04</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CAAAAE382322F3AC7504B812</key>
+		<key>DC8ADB31B1168D950B860489</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E519D2C241C42BD7CC0517F4</key>
+		<key>E411C828F4D5A7CD0B72B4E7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F1C8C3F8BEF3C388DA284C7A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1244C7C41A592E07001892D0 /* NFCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1244C7C31A592E07001892D0 /* NFCollectionCell.m */; };
 		125B62DC1A4A9BAE0096ECB6 /* PSHorizontalTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 125B62D91A4A9BAE0096ECB6 /* PSHorizontalTableCell.m */; };
 		125B62DD1A4A9BAE0096ECB6 /* PSHorizontalTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 125B62DB1A4A9BAE0096ECB6 /* PSHorizontalTableView.m */; };
 		125B62E51A4AA8BE0096ECB6 /* NFImageShowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 125B62E31A4AA8BE0096ECB6 /* NFImageShowController.m */; };
@@ -61,7 +62,6 @@
 		1855A2B21973C089002FCB1D /* Colours.m in Sources */ = {isa = PBXBuildFile; fileRef = 1855A2B11973C089002FCB1D /* Colours.m */; };
 		1855A2B71973C0B8002FCB1D /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 1855A2B51973C0B8002FCB1D /* NSString+FontAwesome.m */; };
 		1855A2B81973C0B8002FCB1D /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1855A2B61973C0B8002FCB1D /* FontAwesome.ttf */; };
-		1855A2BC1973C189002FCB1D /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 1855A2BB1973C189002FCB1D /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1855A2E01973C3A1002FCB1D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1855A2DF1973C3A1002FCB1D /* SystemConfiguration.framework */; };
 		1855A2E21973C3A9002FCB1D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1855A2E11973C3A9002FCB1D /* MobileCoreServices.framework */; };
 		1855A2E41973C3B5002FCB1D /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1855A2E31973C3B5002FCB1D /* CFNetwork.framework */; };
@@ -83,6 +83,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1244C7C21A592E07001892D0 /* NFCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NFCollectionCell.h; path = "untitled folder/NFCollectionCell.h"; sourceTree = "<group>"; };
+		1244C7C31A592E07001892D0 /* NFCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NFCollectionCell.m; path = "untitled folder/NFCollectionCell.m"; sourceTree = "<group>"; };
 		125B62D81A4A9BAE0096ECB6 /* PSHorizontalTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSHorizontalTableCell.h; sourceTree = "<group>"; };
 		125B62D91A4A9BAE0096ECB6 /* PSHorizontalTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSHorizontalTableCell.m; sourceTree = "<group>"; };
 		125B62DA1A4A9BAE0096ECB6 /* PSHorizontalTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSHorizontalTableView.h; sourceTree = "<group>"; };
@@ -133,7 +135,7 @@
 		1855A2331973BF28002FCB1D /* ACNavBarDrawer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACNavBarDrawer.m; sourceTree = "<group>"; };
 		1855A2361973BF3E002FCB1D /* AppConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppConstants.h; sourceTree = "<group>"; };
 		1855A2371973BF3E002FCB1D /* AppImport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppImport.h; sourceTree = "<group>"; };
-		1855A2391973BF53002FCB1D /* ACMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACMacros.h; sourceTree = "<group>"; };
+		1855A2391973BF53002FCB1D /* ACMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ACMacros.h; path = ../ACBox/ACMacros.h; sourceTree = "<group>"; };
 		1855A23B1973BF53002FCB1D /* ACBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACBaseViewController.h; sourceTree = "<group>"; };
 		1855A23C1973BF53002FCB1D /* ACBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACBaseViewController.m; sourceTree = "<group>"; };
 		1855A23F1973BF53002FCB1D /* UIAlertView+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Blocks.h"; sourceTree = "<group>"; };
@@ -176,8 +178,6 @@
 		1855A2B41973C0B8002FCB1D /* NSString+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FontAwesome.h"; sourceTree = "<group>"; };
 		1855A2B51973C0B8002FCB1D /* NSString+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FontAwesome.m"; sourceTree = "<group>"; };
 		1855A2B61973C0B8002FCB1D /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
-		1855A2BA1973C189002FCB1D /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
-		1855A2BB1973C189002FCB1D /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		1855A2DF1973C3A1002FCB1D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		1855A2E11973C3A9002FCB1D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		1855A2E31973C3B5002FCB1D /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -223,6 +223,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1244C7C11A592DAB001892D0 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				1244C7C21A592E07001892D0 /* NFCollectionCell.h */,
+				1244C7C31A592E07001892D0 /* NFCollectionCell.m */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
 		125B62D71A4A9BAE0096ECB6 /* views */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,6 +248,7 @@
 			children = (
 				1855A21E1973BDC9002FCB1D /* 菜单 */,
 				125B62E01A4A9E4F0096ECB6 /* FMMacros.h */,
+				1855A2391973BF53002FCB1D /* ACMacros.h */,
 				125B630C1A4BF8200096ECB6 /* UIView+Layout.h */,
 				125B630D1A4BF8200096ECB6 /* UIView+Layout.m */,
 			);
@@ -248,6 +258,7 @@
 		125B62E11A4AA87C0096ECB6 /* view controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1244C7C11A592DAB001892D0 /* views */,
 				12D5E4B71A511D2700B306CE /* NFHomeController.h */,
 				12D5E4B81A511D2700B306CE /* NFHomeController.m */,
 				125B62E71A4ABB480096ECB6 /* NFBeatyImageCell.h */,
@@ -317,7 +328,6 @@
 				F2EA5AE91A49149300A9F5AA /* data source */,
 				1855A2F71973C54F002FCB1D /* 默认数据 */,
 				1855A2E71973C421002FCB1D /* 主界面 */,
-				1855A2B91973C176002FCB1D /* Json解析 */,
 				1855A2B31973C0AE002FCB1D /* 按钮样式 */,
 				1855A2AF1973C07C002FCB1D /* 颜色 */,
 				1855A2221973BE86002FCB1D /* 瀑布流显示 */,
@@ -450,7 +460,6 @@
 		1855A2381973BF53002FCB1D /* ACBox */ = {
 			isa = PBXGroup;
 			children = (
-				1855A2391973BF53002FCB1D /* ACMacros.h */,
 				1855A23A1973BF53002FCB1D /* BaseViewControllers */,
 				1855A23D1973BF53002FCB1D /* Categories */,
 				1855A2431973BF53002FCB1D /* CustomUI */,
@@ -558,15 +567,6 @@
 			name = "按钮样式";
 			sourceTree = "<group>";
 		};
-		1855A2B91973C176002FCB1D /* Json解析 */ = {
-			isa = PBXGroup;
-			children = (
-				1855A2BA1973C189002FCB1D /* JSONKit.h */,
-				1855A2BB1973C189002FCB1D /* JSONKit.m */,
-			);
-			name = "Json解析";
-			sourceTree = "<group>";
-		};
 		1855A2E71973C421002FCB1D /* 主界面 */ = {
 			isa = PBXGroup;
 			children = (
@@ -653,7 +653,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 1855A1E01973BD96002FCB1D /* Build configuration list for PBXProject "BeautyDemo" */;
+			buildConfigurationList = 1855A1E01973BD96002FCB1D /* Build configuration list for PBXProject "EverydayBeauty" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -753,7 +753,6 @@
 			files = (
 				1855A2341973BF28002FCB1D /* ACNavBarDrawer.m in Sources */,
 				1855A2261973BEA4002FCB1D /* SLGSlideshowView.m in Sources */,
-				1855A2BC1973C189002FCB1D /* JSONKit.m in Sources */,
 				1855A27A1973BF9E002FCB1D /* MJRefreshBaseView.m in Sources */,
 				125B62DC1A4A9BAE0096ECB6 /* PSHorizontalTableCell.m in Sources */,
 				1855A2AE1973BFCA002FCB1D /* SelfImageVIew.m in Sources */,
@@ -779,6 +778,7 @@
 				1855A2B71973C0B8002FCB1D /* NSString+FontAwesome.m in Sources */,
 				1855A22D1973BEB3002FCB1D /* PhotoStackView.m in Sources */,
 				F2EA5AEC1A4914BD00A9F5AA /* NFBeatyImageLoader.m in Sources */,
+				1244C7C41A592E07001892D0 /* NFCollectionCell.m in Sources */,
 				1855A2441973BF53002FCB1D /* ACBaseViewController.m in Sources */,
 				125B630E1A4BF8200096ECB6 /* UIView+Layout.m in Sources */,
 				F2EA5B021A4955EA00A9F5AA /* NFImageResponse.m in Sources */,
@@ -852,7 +852,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "19049E3D-F17C-4602-BF4B-7424F8E782F0";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -884,7 +884,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				PROVISIONING_PROFILE = "19049E3D-F17C-4602-BF4B-7424F8E782F0";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -901,7 +901,7 @@
 				GCC_PREFIX_HEADER = "BeautyDemo/BeautyDemo-Prefix.pch";
 				INFOPLIST_FILE = "BeautyDemo/BeautyDemo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "19049E3D-F17C-4602-BF4B-7424F8E782F0";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -916,7 +916,7 @@
 				GCC_PREFIX_HEADER = "BeautyDemo/BeautyDemo-Prefix.pch";
 				INFOPLIST_FILE = "BeautyDemo/BeautyDemo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "19049E3D-F17C-4602-BF4B-7424F8E782F0";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -924,7 +924,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1855A1E01973BD96002FCB1D /* Build configuration list for PBXProject "BeautyDemo" */ = {
+		1855A1E01973BD96002FCB1D /* Build configuration list for PBXProject "EverydayBeauty" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1855A2151973BD96002FCB1D /* Debug */,

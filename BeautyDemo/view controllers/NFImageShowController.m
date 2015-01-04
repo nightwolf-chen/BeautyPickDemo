@@ -105,7 +105,7 @@
     
     NFImageInfo *imageInfo = _imageInfos[index];
     NFBeatyImageCell *beatyCell = (NFBeatyImageCell *)cell;
-    [beatyCell.imageViewMain setImageWithURL:[NSURL URLWithString:imageInfo.imageUrl]];
+    [beatyCell.imageViewMain sd_setImageWithURL:[NSURL URLWithString:imageInfo.imageUrl]];
     
     return cell;
 }

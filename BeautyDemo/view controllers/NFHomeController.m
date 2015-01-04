@@ -30,6 +30,10 @@
                                  [[NFImageShowController alloc] initWithNibName:nil bundle:nil],
                                  [[NFUserCenterController alloc] initWithNibName:nil bundle:nil]];
     
+#ifdef DEBUG
+    tmpControllers = viewControllers;
+#endif
+    
     self.viewControllers = tmpControllers;
     
 }

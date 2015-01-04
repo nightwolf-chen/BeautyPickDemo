@@ -17,7 +17,7 @@
                BlueprintIdentifier = "1855A1E41973BD96002FCB1D"
                BuildableName = "BeautyDemo.app"
                BlueprintName = "BeautyDemo"
-               ReferencedContainer = "container:BeautyDemo.xcodeproj">
+               ReferencedContainer = "container:EverydayBeauty.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -31,7 +31,7 @@
                BlueprintIdentifier = "1855A2051973BD96002FCB1D"
                BuildableName = "BeautyDemoTests.xctest"
                BlueprintName = "BeautyDemoTests"
-               ReferencedContainer = "container:BeautyDemo.xcodeproj">
+               ReferencedContainer = "container:EverydayBeauty.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -49,7 +49,7 @@
                BlueprintIdentifier = "1855A2051973BD96002FCB1D"
                BuildableName = "BeautyDemoTests.xctest"
                BlueprintName = "BeautyDemoTests"
-               ReferencedContainer = "container:BeautyDemo.xcodeproj">
+               ReferencedContainer = "container:EverydayBeauty.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -59,7 +59,7 @@
             BlueprintIdentifier = "1855A1E41973BD96002FCB1D"
             BuildableName = "BeautyDemo.app"
             BlueprintName = "BeautyDemo"
-            ReferencedContainer = "container:BeautyDemo.xcodeproj">
+            ReferencedContainer = "container:EverydayBeauty.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -78,7 +78,7 @@
             BlueprintIdentifier = "1855A1E41973BD96002FCB1D"
             BuildableName = "BeautyDemo.app"
             BlueprintName = "BeautyDemo"
-            ReferencedContainer = "container:BeautyDemo.xcodeproj">
+            ReferencedContainer = "container:EverydayBeauty.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -96,7 +96,7 @@
             BlueprintIdentifier = "1855A1E41973BD96002FCB1D"
             BuildableName = "BeautyDemo.app"
             BlueprintName = "BeautyDemo"
-            ReferencedContainer = "container:BeautyDemo.xcodeproj">
+            ReferencedContainer = "container:EverydayBeauty.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
