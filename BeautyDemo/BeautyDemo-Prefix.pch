@@ -22,5 +22,4 @@
 
 #import "AppImport.h"
 #import "UIView+Layout.h"
-#import "UIColor+HexString.h"
 

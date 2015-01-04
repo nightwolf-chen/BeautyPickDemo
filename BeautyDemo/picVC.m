@@ -211,6 +211,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        self.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemTopRated
+                                                                     tag:UITabBarSystemItemTopRated];
     }
     return self;
 }
