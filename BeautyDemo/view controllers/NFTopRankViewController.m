@@ -10,6 +10,7 @@
 #import "NFCollectionCell.h"
 #import "NFImageInfo.h"
 #import "NFBeatyImageLoader.h"
+#import "NFBeautyPagingLoader.h"
 
 #import <CHTCollectionViewWaterfallLayout.h>
 #import <SVPullToRefresh.h>
@@ -23,6 +24,7 @@ static NSString *const kCollectionCellReusableIdentifier = @"ImageCell";
 
 @property (nonatomic,strong) UICollectionView *collectionView;
 @property (nonatomic,strong) NSMutableArray *imageInfos;
+@property (nonatomic,strong) NFBeautyPagingLoader *pagingLoader;
 
 @end
 
@@ -32,7 +34,7 @@ static NSString *const kCollectionCellReusableIdentifier = @"ImageCell";
 {
     if (self = [super initWithNibName:nil bundle:nil]) {
         
-//        self.automaticallyAdjustsScrollViewInsets = NO;
+        self.automaticallyAdjustsScrollViewInsets = YES;
         self.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemTopRated
                                                                  tag:UITabBarSystemItemTopRated];
         CHTCollectionViewWaterfallLayout *collectionLayout = [[CHTCollectionViewWaterfallLayout alloc] init];
@@ -50,6 +52,14 @@ static NSString *const kCollectionCellReusableIdentifier = @"ImageCell";
         [_collectionView registerClass:[NFCollectionCell class]
             forCellWithReuseIdentifier:kCollectionCellReusableIdentifier];
         
+        __weak id weakSelf = self;
+        void (^refreshBlock)(void) = ^{
+            [weakSelf loadMore];
+        };
+        
+        [_collectionView addPullToRefreshWithActionHandler:refreshBlock
+                                                  position:SVPullToRefreshPositionBottom];
+        
         [self.view addSubview:_collectionView];
        
     }
@@ -58,15 +68,24 @@ static NSString *const kCollectionCellReusableIdentifier = @"ImageCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [[NFBeatyImageLoader shareInstance] loadImages:@"校花"
-                                              page:1
-                                        completion:^(BOOL success,id obj){
-                                            if (success && obj) {
-                                                NFImageResponse *resp = obj;
-                                                [self loadImageInfos:resp.imageInfos];
-                                            }
-                                        }];
+    
+    [self loadMore];
     // Do any additional setup after loading the view from its nib.
+}
+
+- (void)loadMore
+{
+    if (!_pagingLoader) {
+        self.pagingLoader = [NFBeautyPagingLoader loaderWithTagName:@"校花"];
+    }
+    
+    [_pagingLoader loadMore:^(BOOL suc,id obj){
+        if (suc && obj) {
+            NFImageResponse *resp = obj;
+            [self loadImageInfos:resp.imageInfos];
+            [_collectionView.pullToRefreshView stopAnimating];
+        }
+    }];
 }
 
 - (void)loadImageInfos:(NSArray *)imageInfos
@@ -75,19 +94,44 @@ static NSString *const kCollectionCellReusableIdentifier = @"ImageCell";
         self.imageInfos = [NSMutableArray array];
     }
     
-    
+    NSMutableArray *processedInfos = [NSMutableArray array];
     for(NFImageInfo *aInfo in imageInfos){
         CGFloat originWidth = aInfo.thumbWidth;
         CGFloat originHeight = aInfo.thumbHeight;
         if (originWidth == 0 || originHeight == 0) {
             continue;
         }
+        
+        BOOL found = NO;
+        for(NFImageInfo *existsInfo in _imageInfos){
+            if ([existsInfo.imageId isEqual:aInfo.imageId]) {
+                found = YES;
+                break;
+            }
+        }
+        
+        if (found) {
+            continue;
+        }
+        
         aInfo.thumbWidth = kImageWidth;
         aInfo.thumbHeight = (originHeight*kImageWidth)/originWidth;
+        [processedInfos addObject:aInfo];
     }
     
-    [_imageInfos addObjectsFromArray:imageInfos];
+    
+    NSMutableArray *indexes = [NSMutableArray array];
+    for(NSUInteger index=0 ; index < processedInfos.count ;index++){
+        NSUInteger row = index + _imageInfos.count;
+        NSIndexPath *aIndexPath = [NSIndexPath indexPathForItem:row inSection:0];
+        [indexes addObject:aIndexPath];
+    }
+    
+    [_imageInfos addObjectsFromArray:processedInfos];
+    
+    [_collectionView insertItemsAtIndexPaths:indexes];
     [_collectionView reloadData];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -121,7 +165,9 @@ static NSString *const kCollectionCellReusableIdentifier = @"ImageCell";
     return 1;
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
+                  cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kCollectionCellReusableIdentifier
                                                                            forIndexPath:indexPath];
     
@@ -129,7 +175,11 @@ static NSString *const kCollectionCellReusableIdentifier = @"ImageCell";
         cell = [[NFCollectionCell alloc] init];
     }
     
-    ((NFCollectionCell *)cell).imageInfo = _imageInfos[indexPath.row];
+    NFImageInfo *info = _imageInfos[indexPath.row];
+    ((NFCollectionCell *)cell).imageInfo = info;
+    
+    
+    NSLog(@"row:%d url:%@",indexPath.row, info.imageId);
     
     return cell;
 }
@@ -151,9 +201,13 @@ static NSString *const kCollectionCellReusableIdentifier = @"ImageCell";
 //}
 
 #pragma mark - CHTCollectionViewDelegateWaterfallLayout
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+- (CGSize)collectionView:(UICollectionView *)collectionView
+                  layout:(UICollectionViewLayout *)collectionViewLayout
+  sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
     NFImageInfo *imageInfo = _imageInfos[indexPath.row];
     return CGSizeMake(imageInfo.thumbWidth, imageInfo.thumbHeight);
+    
 }
 
 

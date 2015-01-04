@@ -39,14 +39,20 @@
     self.width = imageInfo.thumbWidth;
     self.height = imageInfo.thumbHeight;
     
-    self.backgroundColor = [UIColor blueColor];
+//    self.backgroundColor = [UIColor blueColor];
     
-    NSURL *url = [NSURL URLWithString:imageInfo.thumbUrl];
+    NSURL *url = [NSURL URLWithString:imageInfo.imageUrl];
     
-    [self.imageView sd_setImageWithURL:url placeholderImage:nil completed:^(UIImage *image,NSError *err,SDImageCacheType cacheType,NSURL *url){
+    _imageView.image = nil;
+    [_imageView sd_setImageWithURL:url placeholderImage:nil completed:^(UIImage *image,NSError *err,SDImageCacheType cacheType,NSURL *url){
+        if (err) {
+            NSLog(@"%@",[err localizedDescription]);
+        }
         self.imageView.width = imageInfo.thumbWidth;
         self.imageView.height = imageInfo.thumbHeight;
     }];
+    
+    
 }
 
 @end

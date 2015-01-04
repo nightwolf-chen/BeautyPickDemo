@@ -14,6 +14,7 @@
 		125B62E61A4AA8BE0096ECB6 /* NFImageShowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 125B62E41A4AA8BE0096ECB6 /* NFImageShowController.xib */; };
 		125B62E91A4ABB480096ECB6 /* NFBeatyImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 125B62E81A4ABB480096ECB6 /* NFBeatyImageCell.m */; };
 		125B630E1A4BF8200096ECB6 /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 125B630D1A4BF8200096ECB6 /* UIView+Layout.m */; };
+		12D5A3E51A594D8A002DA874 /* NFBeautyPagingLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D5A3E41A594D8A002DA874 /* NFBeautyPagingLoader.m */; };
 		12D5E4B91A511D2700B306CE /* NFHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D5E4B81A511D2700B306CE /* NFHomeController.m */; };
 		12D5E4BD1A511D6500B306CE /* NFUserCenterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D5E4BB1A511D6500B306CE /* NFUserCenterController.m */; };
 		12D5E4BE1A511D6500B306CE /* NFUserCenterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12D5E4BC1A511D6500B306CE /* NFUserCenterController.xib */; };
@@ -97,6 +98,8 @@
 		125B62E81A4ABB480096ECB6 /* NFBeatyImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NFBeatyImageCell.m; path = ../views/NFBeatyImageCell.m; sourceTree = "<group>"; };
 		125B630C1A4BF8200096ECB6 /* UIView+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layout.h"; sourceTree = "<group>"; };
 		125B630D1A4BF8200096ECB6 /* UIView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
+		12D5A3E31A594D8A002DA874 /* NFBeautyPagingLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFBeautyPagingLoader.h; sourceTree = "<group>"; };
+		12D5A3E41A594D8A002DA874 /* NFBeautyPagingLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFBeautyPagingLoader.m; sourceTree = "<group>"; };
 		12D5E4B71A511D2700B306CE /* NFHomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFHomeController.h; sourceTree = "<group>"; };
 		12D5E4B81A511D2700B306CE /* NFHomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFHomeController.m; sourceTree = "<group>"; };
 		12D5E4BA1A511D6500B306CE /* NFUserCenterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFUserCenterController.h; sourceTree = "<group>"; };
@@ -609,6 +612,8 @@
 				F2EA5AEE1A4948A200A9F5AA /* NFImageInfo.m */,
 				F2EA5B001A4955EA00A9F5AA /* NFImageResponse.h */,
 				F2EA5B011A4955EA00A9F5AA /* NFImageResponse.m */,
+				12D5A3E31A594D8A002DA874 /* NFBeautyPagingLoader.h */,
+				12D5A3E41A594D8A002DA874 /* NFBeautyPagingLoader.m */,
 			);
 			name = "data source";
 			sourceTree = "<group>";
@@ -783,6 +788,7 @@
 				125B630E1A4BF8200096ECB6 /* UIView+Layout.m in Sources */,
 				F2EA5B021A4955EA00A9F5AA /* NFImageResponse.m in Sources */,
 				1855A2AD1973BFCA002FCB1D /* ImageWaterView.m in Sources */,
+				12D5A3E51A594D8A002DA874 /* NFBeautyPagingLoader.m in Sources */,
 				F2EA5AEF1A4948A200A9F5AA /* NFImageInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
