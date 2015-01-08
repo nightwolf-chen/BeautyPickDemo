@@ -6,3 +6,4 @@ pod 'Vertigo'
 pod 'ASIHTTPRequest', '~> 1.8.2'
 pod 'ODRefreshControl',:head
 pod 'CHTCollectionViewWaterfallLayout'
+pod 'MWPhotoBrowser'

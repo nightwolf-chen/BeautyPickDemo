@@ -20,6 +20,7 @@
 		12D5E4BE1A511D6500B306CE /* NFUserCenterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12D5E4BC1A511D6500B306CE /* NFUserCenterController.xib */; };
 		12D5E4C21A511D8000B306CE /* NFTopRankViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D5E4C01A511D8000B306CE /* NFTopRankViewController.m */; };
 		12D5E4C31A511D8000B306CE /* NFTopRankViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12D5E4C11A511D8000B306CE /* NFTopRankViewController.xib */; };
+		12DE3CB61A5D0C2600D61545 /* NFCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12DE3CB51A5D0C2600D61545 /* NFCollectionHeaderView.m */; };
 		1855A1E91973BD96002FCB1D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1855A1E81973BD96002FCB1D /* Foundation.framework */; };
 		1855A1EB1973BD96002FCB1D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1855A1EA1973BD96002FCB1D /* CoreGraphics.framework */; };
 		1855A1ED1973BD96002FCB1D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1855A1EC1973BD96002FCB1D /* UIKit.framework */; };
@@ -108,6 +109,8 @@
 		12D5E4BF1A511D8000B306CE /* NFTopRankViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFTopRankViewController.h; sourceTree = "<group>"; };
 		12D5E4C01A511D8000B306CE /* NFTopRankViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFTopRankViewController.m; sourceTree = "<group>"; };
 		12D5E4C11A511D8000B306CE /* NFTopRankViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NFTopRankViewController.xib; sourceTree = "<group>"; };
+		12DE3CB41A5D0C2600D61545 /* NFCollectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NFCollectionHeaderView.h; path = "untitled folder/NFCollectionHeaderView.h"; sourceTree = "<group>"; };
+		12DE3CB51A5D0C2600D61545 /* NFCollectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NFCollectionHeaderView.m; path = "untitled folder/NFCollectionHeaderView.m"; sourceTree = "<group>"; };
 		1855A1E51973BD96002FCB1D /* BeautyDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeautyDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1855A1E81973BD96002FCB1D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1855A1EA1973BD96002FCB1D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -232,6 +235,8 @@
 			children = (
 				1244C7C21A592E07001892D0 /* NFCollectionCell.h */,
 				1244C7C31A592E07001892D0 /* NFCollectionCell.m */,
+				12DE3CB41A5D0C2600D61545 /* NFCollectionHeaderView.h */,
+				12DE3CB51A5D0C2600D61545 /* NFCollectionHeaderView.m */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -769,6 +774,7 @@
 				125B62E51A4AA8BE0096ECB6 /* NFImageShowController.m in Sources */,
 				1855A1FF1973BD96002FCB1D /* ViewController.m in Sources */,
 				12D5E4B91A511D2700B306CE /* NFHomeController.m in Sources */,
+				12DE3CB61A5D0C2600D61545 /* NFCollectionHeaderView.m in Sources */,
 				1855A2B21973C089002FCB1D /* Colours.m in Sources */,
 				1855A27D1973BF9E002FCB1D /* MJRefreshHeaderView.m in Sources */,
 				125B62E91A4ABB480096ECB6 /* NFBeatyImageCell.m in Sources */,
@@ -860,7 +866,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "6d866c22-4e7c-4038-a535-e7f72f326161";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -892,7 +898,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "6d866c22-4e7c-4038-a535-e7f72f326161";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -909,7 +915,7 @@
 				GCC_PREFIX_HEADER = "BeautyDemo/BeautyDemo-Prefix.pch";
 				INFOPLIST_FILE = "BeautyDemo/BeautyDemo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "6d866c22-4e7c-4038-a535-e7f72f326161";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -924,7 +930,7 @@
 				GCC_PREFIX_HEADER = "BeautyDemo/BeautyDemo-Prefix.pch";
 				INFOPLIST_FILE = "BeautyDemo/BeautyDemo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "6d866c22-4e7c-4038-a535-e7f72f326161";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

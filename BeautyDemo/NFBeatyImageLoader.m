@@ -11,7 +11,7 @@
 #import "NFImageResponse.h"
 
 static NSString *(^imageUrl)(NSString*,NSUInteger,NSUInteger) = ^(NSString *categoryName,NSUInteger pageNum,NSUInteger resultCount){
-    NSString* urlString = [NSString stringWithFormat:@"http://image.baidu.com/channel/listjson?pn=%lu&rn=%d&tag1=美女&tag2=%@", (unsigned long)pageNum,resultCount,categoryName];
+    NSString* urlString = [NSString stringWithFormat:@"http://image.baidu.com/channel/listjson?pn=%lu&rn=%lu&tag1=美女&tag2=%@",pageNum,resultCount,categoryName];
     return [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 };
 

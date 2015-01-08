@@ -19,7 +19,27 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-DACircularProgress.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-MBProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-MWPhotoBrowser.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-ODRefreshControl.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-PSTCollectionView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -57,52 +77,72 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>25AB590FBD007420E7EC682E</key>
+		<key>4D559853C064FAEBEE26BDD8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>275FAD27AA29ACD596241665</key>
+		<key>5D8C30BFCEBB106CB3E390BC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>67EDC6489BB0E13B0EB598D4</key>
+		<key>5EF7743FA7C4D0864D4484BA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9DA00F33BA1B04C904BE4C0D</key>
+		<key>84D93B998F93AEB1922C7BE4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C3A3EBFD0847072F27DC2578</key>
+		<key>8775A99F9B431041040B0856</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CD5E1E50DDE10DD67A57A929</key>
+		<key>8AB5104B3EC85FBC1C0EDF6B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DA9281A26A1F54C8A9BECF04</key>
+		<key>8EC074F545DE8AC0C44E0676</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DC8ADB31B1168D950B860489</key>
+		<key>9491CABB9CF54216E2E68B84</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E411C828F4D5A7CD0B72B4E7</key>
+		<key>9C92D98001EC136533098CC6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F1C8C3F8BEF3C388DA284C7A</key>
+		<key>A1B1C27B7F39C72EC1FEF4BE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AF77083EA0BD28AAF45A5C9A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B043D27205191074CE828C83</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DA514F687DD61944AF0C60DA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E15C0A8687391FBA531379BA</key>
 		<dict>
 			<key>primary</key>
 			<true/>

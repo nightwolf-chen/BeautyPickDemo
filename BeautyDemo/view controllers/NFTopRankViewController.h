@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <CHTCollectionViewWaterfallLayout.h>
+#import <MWPhotoBrowser.h>
 
-@interface NFTopRankViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate,CHTCollectionViewDelegateWaterfallLayout>
+@interface NFTopRankViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate,CHTCollectionViewDelegateWaterfallLayout,MWPhotoBrowserDelegate>
 
 @end

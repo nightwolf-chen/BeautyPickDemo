@@ -11,21 +11,31 @@
 #import "NFImageInfo.h"
 #import "NFBeatyImageLoader.h"
 #import "NFBeautyPagingLoader.h"
+#import "NFCollectionHeaderView.h"
 
 #import <CHTCollectionViewWaterfallLayout.h>
 #import <SVPullToRefresh.h>
+#import <MWPhotoBrowser.h>
 
 #define kSpace 5
 #define kImageWidth (SCREEN_WIDTH/2.0f - 2*kSpace)
 
 static NSString *const kCollectionCellReusableIdentifier = @"ImageCell";
+static NSString *const kCollectionHeaderReusableIdentifier = @"ImageHeader";
+static const CGFloat kHeaderHeight = 80;
 
 @interface NFTopRankViewController ()
 
 @property (nonatomic,strong) UICollectionView *collectionView;
 @property (nonatomic,strong) NSMutableArray *imageInfos;
 @property (nonatomic,strong) NFBeautyPagingLoader *pagingLoader;
+@property (nonatomic,strong) NSMutableDictionary *cachedImageInfos;
 
+@property (nonatomic,strong) NSArray *displayingPhotos;
+@property (nonatomic,strong) NSString *displayingTitle;
+
+@property (nonatomic,strong) NFCollectionHeaderView *headView;
+@property (nonatomic,assign) CGFloat lastContentOffset;
 @end
 
 @implementation NFTopRankViewController
@@ -33,6 +43,8 @@ static NSString *const kCollectionCellReusableIdentifier = @"ImageCell";
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     if (self = [super initWithNibName:nil bundle:nil]) {
+        
+        _cachedImageInfos = [[NSMutableDictionary alloc] init];
         
         self.automaticallyAdjustsScrollViewInsets = YES;
         self.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemTopRated
@@ -48,9 +60,13 @@ static NSString *const kCollectionCellReusableIdentifier = @"ImageCell";
         _collectionView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
         _collectionView.dataSource = self;
         _collectionView.delegate = self;
-        _collectionView.backgroundColor = [UIColor whiteColor];
+        _collectionView.backgroundColor = [UIColor grayColor];
         [_collectionView registerClass:[NFCollectionCell class]
             forCellWithReuseIdentifier:kCollectionCellReusableIdentifier];
+        
+        [_collectionView registerClass:[NFCollectionHeaderView class]
+            forSupplementaryViewOfKind:CHTCollectionElementKindSectionHeader
+                   withReuseIdentifier:kCollectionHeaderReusableIdentifier];
         
         __weak id weakSelf = self;
         void (^refreshBlock)(void) = ^{
@@ -61,7 +77,11 @@ static NSString *const kCollectionCellReusableIdentifier = @"ImageCell";
                                                   position:SVPullToRefreshPositionBottom];
         
         [self.view addSubview:_collectionView];
-       
+        
+        _headView = [[NFCollectionHeaderView alloc] initWithFrame:RECT(0, 0, SCREEN_WIDTH, kHeaderHeight)];
+        _headView.backgroundColor = [UIColor yellowColor];
+        
+        [self.view addSubview:_headView];
     }
     return self;
 }
@@ -76,7 +96,7 @@ static NSString *const kCollectionCellReusableIdentifier = @"ImageCell";
 - (void)loadMore
 {
     if (!_pagingLoader) {
-        self.pagingLoader = [NFBeautyPagingLoader loaderWithTagName:@"校花"];
+        self.pagingLoader = [NFBeautyPagingLoader loaderWithTagName:@"性感"];
     }
     
     [_pagingLoader loadMore:^(BOOL suc,id obj){
@@ -98,25 +118,17 @@ static NSString *const kCollectionCellReusableIdentifier = @"ImageCell";
     for(NFImageInfo *aInfo in imageInfos){
         CGFloat originWidth = aInfo.thumbWidth;
         CGFloat originHeight = aInfo.thumbHeight;
+        
         if (originWidth == 0 || originHeight == 0) {
             continue;
         }
         
-        BOOL found = NO;
-        for(NFImageInfo *existsInfo in _imageInfos){
-            if ([existsInfo.imageId isEqual:aInfo.imageId]) {
-                found = YES;
-                break;
-            }
+        if (!_cachedImageInfos[aInfo.imageId]) {
+            aInfo.thumbWidth = kImageWidth;
+            aInfo.thumbHeight = (originHeight*kImageWidth)/originWidth;
+            [processedInfos addObject:aInfo];
+            _cachedImageInfos[aInfo.imageId] = aInfo;
         }
-        
-        if (found) {
-            continue;
-        }
-        
-        aInfo.thumbWidth = kImageWidth;
-        aInfo.thumbHeight = (originHeight*kImageWidth)/originWidth;
-        [processedInfos addObject:aInfo];
     }
     
     
@@ -179,26 +191,51 @@ static NSString *const kCollectionCellReusableIdentifier = @"ImageCell";
     ((NFCollectionCell *)cell).imageInfo = info;
     
     
-    NSLog(@"row:%d url:%@",indexPath.row, info.imageId);
+//    NSLog(@"row:%d url:%@",indexPath.row, info.imageId);
     
     return cell;
 }
 
-//- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
-//    UICollectionReusableView *reusableView = nil;
-//    
-//    if ([kind isEqualToString:CHTCollectionElementKindSectionHeader]) {
-//        reusableView = [collectionView dequeueReusableSupplementaryViewOfKind:kind
-//                                                          withReuseIdentifier:HEADER_IDENTIFIER
-//                                                                 forIndexPath:indexPath];
-//    } else if ([kind isEqualToString:CHTCollectionElementKindSectionFooter]) {
-//        reusableView = [collectionView dequeueReusableSupplementaryViewOfKind:kind
-//                                                          withReuseIdentifier:FOOTER_IDENTIFIER
-//                                                                 forIndexPath:indexPath];
-//    }
-//    
-//    return reusableView;
-//}
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    NFImageInfo *info = _imageInfos[indexPath.row];
+    
+    self.displayingPhotos = @[[MWPhoto photoWithURL:[NSURL URLWithString:info.imageUrl]]];
+    self.displayingTitle = info.desc;
+    
+    MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
+    
+    // Set options
+    browser.displayActionButton = YES; // Show action button to allow sharing, copying, etc (defaults to YES)
+    browser.displayNavArrows = YES; // Whether to display left and right nav arrows on toolbar (defaults to NO)
+    browser.displaySelectionButtons = NO; // Whether selection buttons are shown on each image (defaults to NO)
+    browser.zoomPhotosToFill = YES; // Images that almost fill the screen will be initially zoomed to fill (defaults to YES)
+    browser.alwaysShowControls = YES; // Allows to control whether the bars and controls are always visible or whether they fade away to show the photo full (defaults to NO)
+    browser.enableGrid = NO; // Whether to allow the viewing of all the photo thumbnails on a grid (defaults to YES)
+    browser.startOnGrid = NO; // Whether to start on the grid of thumbnails instead of the first photo (defaults to NO)
+    
+    // Optionally set the current visible photo before displaying
+    [browser setCurrentPhotoIndex:1];
+    
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:browser];
+    // Present
+    [self presentViewController:navigationController animated:YES completion:^{}];
+
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    UICollectionReusableView *reusableView = nil;
+    
+    if ([kind isEqualToString:CHTCollectionElementKindSectionHeader]) {
+        reusableView = [collectionView dequeueReusableSupplementaryViewOfKind:kind
+                                                          withReuseIdentifier:kCollectionHeaderReusableIdentifier
+                                                                 forIndexPath:indexPath];
+    }
+    
+    return reusableView;
+}
+
 
 #pragma mark - CHTCollectionViewDelegateWaterfallLayout
 - (CGSize)collectionView:(UICollectionView *)collectionView
@@ -210,5 +247,55 @@ static NSString *const kCollectionCellReusableIdentifier = @"ImageCell";
     
 }
 
+#pragma mark - MWPhotoBrowserDelegate
+- (NSUInteger)numberOfPhotosInPhotoBrowser:(MWPhotoBrowser *)photoBrowser
+{
+    return _displayingPhotos.count;
+}
+
+- (id <MWPhoto>)photoBrowser:(MWPhotoBrowser *)photoBrowser photoAtIndex:(NSUInteger)index {
+    if (index < _displayingPhotos.count){
+        return _displayingPhotos[index];
+    }
+    return nil;
+}
+
+- (NSString *)photoBrowser:(MWPhotoBrowser *)photoBrowser titleForPhotoAtIndex:(NSUInteger)index
+{
+    return _displayingTitle;
+}
+
+- (void)photoBrowser:(MWPhotoBrowser *)photoBrowser actionButtonPressedForPhotoAtIndex:(NSUInteger)index
+{
+//    [photoBrowser dismissViewControllerAnimated:YES
+//                                     completion:^{}];
+    //TODO:
+}
+
+#pragma mark - UIScrollViewDelegate
+- (void)handleHeader
+{
+    UIScrollView *scrollView = _collectionView;
+    if (self.lastContentOffset > scrollView.contentOffset.y){
+        _headView.hidden = NO;
+    }else if (self.lastContentOffset < scrollView.contentOffset.y){
+        _headView.hidden = YES;
+    }
+    self.lastContentOffset = scrollView.contentOffset.y; 
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+//    [self handleHeader];
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    [self handleHeader];
+}
+
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
+{
+}
 
 @end

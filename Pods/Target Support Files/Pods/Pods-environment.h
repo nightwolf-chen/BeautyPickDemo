@@ -84,11 +84,35 @@
 #define COCOAPODS_VERSION_MINOR_CHTCollectionViewWaterfallLayout 8
 #define COCOAPODS_VERSION_PATCH_CHTCollectionViewWaterfallLayout 0
 
+// DACircularProgress
+#define COCOAPODS_POD_AVAILABLE_DACircularProgress
+#define COCOAPODS_VERSION_MAJOR_DACircularProgress 2
+#define COCOAPODS_VERSION_MINOR_DACircularProgress 2
+#define COCOAPODS_VERSION_PATCH_DACircularProgress 0
+
+// MBProgressHUD
+#define COCOAPODS_POD_AVAILABLE_MBProgressHUD
+#define COCOAPODS_VERSION_MAJOR_MBProgressHUD 0
+#define COCOAPODS_VERSION_MINOR_MBProgressHUD 9
+#define COCOAPODS_VERSION_PATCH_MBProgressHUD 0
+
+// MWPhotoBrowser
+#define COCOAPODS_POD_AVAILABLE_MWPhotoBrowser
+#define COCOAPODS_VERSION_MAJOR_MWPhotoBrowser 1
+#define COCOAPODS_VERSION_MINOR_MWPhotoBrowser 4
+#define COCOAPODS_VERSION_PATCH_MWPhotoBrowser 1
+
 // ODRefreshControl
 #define COCOAPODS_POD_AVAILABLE_ODRefreshControl
 #define COCOAPODS_VERSION_MAJOR_ODRefreshControl 1
 #define COCOAPODS_VERSION_MINOR_ODRefreshControl 1
 #define COCOAPODS_VERSION_PATCH_ODRefreshControl 0
+
+// PSTCollectionView
+#define COCOAPODS_POD_AVAILABLE_PSTCollectionView
+#define COCOAPODS_VERSION_MAJOR_PSTCollectionView 1
+#define COCOAPODS_VERSION_MINOR_PSTCollectionView 2
+#define COCOAPODS_VERSION_PATCH_PSTCollectionView 3
 
 // Reachability
 #define COCOAPODS_POD_AVAILABLE_Reachability
