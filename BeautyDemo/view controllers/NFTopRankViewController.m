@@ -11,7 +11,8 @@
 #import "NFImageInfo.h"
 #import "NFBeatyImageLoader.h"
 #import "NFBeautyPagingLoader.h"
-#import "NFCollectionHeaderView.h"
+#import "LMDropdownView.h"
+#import "NFTopRankMenu.h"
 
 #import <CHTCollectionViewWaterfallLayout.h>
 #import <SVPullToRefresh.h>
@@ -26,6 +27,8 @@ static NSString *const kCollectionHeaderReusableIdentifier = @"ImageHeader";
 @interface NFTopRankViewController ()
 
 @property (nonatomic,strong) UICollectionView *collectionView;
+@property (nonatomic,strong) LMDropdownView *menuView;
+
 @property (nonatomic,strong) NSMutableArray *imageInfos;
 @property (nonatomic,strong) NFBeautyPagingLoader *pagingLoader;
 @property (nonatomic,strong) NSMutableDictionary *cachedImageInfos;
@@ -61,10 +64,6 @@ static NSString *const kCollectionHeaderReusableIdentifier = @"ImageHeader";
         [_collectionView registerClass:[NFCollectionCell class]
             forCellWithReuseIdentifier:kCollectionCellReusableIdentifier];
         
-        [_collectionView registerClass:[NFCollectionHeaderView class]
-            forSupplementaryViewOfKind:CHTCollectionElementKindSectionHeader
-                   withReuseIdentifier:kCollectionHeaderReusableIdentifier];
-        
         __weak id weakSelf = self;
         void (^refreshBlock)(void) = ^{
             [weakSelf loadMore];
@@ -72,8 +71,12 @@ static NSString *const kCollectionHeaderReusableIdentifier = @"ImageHeader";
         [_collectionView addPullToRefreshWithActionHandler:refreshBlock
                                                   position:SVPullToRefreshPositionBottom];
         
+        
+        
         [self.view addSubview:_collectionView];
         
+        _menuView = [[LMDropdownView alloc] init];
+        _menuView.menuContentView = [[NFTopRankMenu alloc] init];
         
         self.navigationItem.title = @"最新图片";
     }
@@ -82,6 +85,8 @@ static NSString *const kCollectionHeaderReusableIdentifier = @"ImageHeader";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [_menuView showInView:self.view withFrame:self.view.bounds];
     
     [self loadMore];
     // Do any additional setup after loading the view from its nib.
@@ -107,7 +112,7 @@ static NSString *const kCollectionHeaderReusableIdentifier = @"ImageHeader";
 {
     CGFloat naviHeight = self.navigationController.navigationBar.height;
     CGFloat tabHeight = self.tabBarController.tabBar.height;
-//    _collectionView.frame = CGRectMake(0, naviHeight, SCREEN_WIDTH, self.view.height-tabHeight);
+//    _collectionView.frame = CGRectMake(0,naviHeight,SCREEN_WIDTH,self.view.height-tabHeight);
     _collectionView.contentInset = UIEdgeInsetsMake(naviHeight, 0, tabHeight, 0);
 }
 

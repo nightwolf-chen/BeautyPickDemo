@@ -29,7 +29,8 @@
     if (self = [super initWithNibName:nil bundle:nil]) {
         self.automaticallyAdjustsScrollViewInsets = NO;
         
-        self.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFavorites tag:UITabBarSystemItemFavorites];
+        self.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFavorites
+                                                                     tag:UITabBarSystemItemFavorites];
     }
     
     return self;

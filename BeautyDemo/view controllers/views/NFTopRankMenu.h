@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NFTopRankMenu : UIView
+@interface NFTopRankMenu : UIView<UITableViewDataSource,UITableViewDelegate>
+
++ (CGFloat)menuHeight;
 
 @end

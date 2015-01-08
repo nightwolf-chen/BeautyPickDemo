@@ -19,10 +19,30 @@
 			<key>orderHint</key>
 			<integer>10</integer>
 		</dict>
+		<key>Pods-DACircularProgress.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>13</integer>
+		</dict>
+		<key>Pods-MBProgressHUD.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>14</integer>
+		</dict>
+		<key>Pods-MWPhotoBrowser.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>15</integer>
+		</dict>
 		<key>Pods-ODRefreshControl.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>5</integer>
+		</dict>
+		<key>Pods-PSTCollectionView.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>16</integer>
 		</dict>
 		<key>Pods-Reachability.xcscheme</key>
 		<dict>
@@ -97,6 +117,21 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>4D559853C064FAEBEE26BDD8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5D8C30BFCEBB106CB3E390BC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5EF7743FA7C4D0864D4484BA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>67EDC6489BB0E13B0EB598D4</key>
 		<dict>
 			<key>primary</key>
@@ -107,12 +142,57 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>84D93B998F93AEB1922C7BE4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8775A99F9B431041040B0856</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8AB5104B3EC85FBC1C0EDF6B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8EC074F545DE8AC0C44E0676</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9491CABB9CF54216E2E68B84</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9C92D98001EC136533098CC6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>9DA00F33BA1B04C904BE4C0D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>A1B1C27B7F39C72EC1FEF4BE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>AB7669BAB475A64E12D5DE4A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AF77083EA0BD28AAF45A5C9A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B043D27205191074CE828C83</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -147,6 +227,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>DA514F687DD61944AF0C60DA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>DA9281A26A1F54C8A9BECF04</key>
 		<dict>
 			<key>primary</key>
@@ -158,6 +243,11 @@
 			<true/>
 		</dict>
 		<key>DC8ADB31B1168D950B860489</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E15C0A8687391FBA531379BA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
