@@ -3,7 +3,7 @@
 //  BeautyDemo
 //
 //  Created by Qeye Wang on 12/23/14.
-//  Copyright (c) 2014 icephone. All rights reserved.
+//  Copyright (c) 2014 nirvawolf. All rights reserved.
 //
 
 #import "NFImageResponse.h"

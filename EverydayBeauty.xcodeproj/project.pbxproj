@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1244C7C41A592E07001892D0 /* NFCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1244C7C31A592E07001892D0 /* NFCollectionCell.m */; };
 		125B62DC1A4A9BAE0096ECB6 /* PSHorizontalTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 125B62D91A4A9BAE0096ECB6 /* PSHorizontalTableCell.m */; };
 		125B62DD1A4A9BAE0096ECB6 /* PSHorizontalTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 125B62DB1A4A9BAE0096ECB6 /* PSHorizontalTableView.m */; };
 		125B62E51A4AA8BE0096ECB6 /* NFImageShowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 125B62E31A4AA8BE0096ECB6 /* NFImageShowController.m */; };
@@ -20,7 +19,11 @@
 		12D5E4BE1A511D6500B306CE /* NFUserCenterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12D5E4BC1A511D6500B306CE /* NFUserCenterController.xib */; };
 		12D5E4C21A511D8000B306CE /* NFTopRankViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D5E4C01A511D8000B306CE /* NFTopRankViewController.m */; };
 		12D5E4C31A511D8000B306CE /* NFTopRankViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12D5E4C11A511D8000B306CE /* NFTopRankViewController.xib */; };
-		12DE3CB61A5D0C2600D61545 /* NFCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12DE3CB51A5D0C2600D61545 /* NFCollectionHeaderView.m */; };
+		12D673921A5E1953007CF496 /* NFTabedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D673911A5E1953007CF496 /* NFTabedViewController.m */; };
+		12D673981A5E1992007CF496 /* NFCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D673951A5E1992007CF496 /* NFCollectionCell.m */; };
+		12D673F61A5E8999007CF496 /* LMDropdownView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D673F21A5E8999007CF496 /* LMDropdownView.m */; };
+		12D673F71A5E8999007CF496 /* UIImage+LMImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D673F51A5E8999007CF496 /* UIImage+LMImage.m */; };
+		12D673FA1A5E8A45007CF496 /* NFTopRankMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D673F91A5E8A45007CF496 /* NFTopRankMenu.m */; };
 		1855A1E91973BD96002FCB1D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1855A1E81973BD96002FCB1D /* Foundation.framework */; };
 		1855A1EB1973BD96002FCB1D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1855A1EA1973BD96002FCB1D /* CoreGraphics.framework */; };
 		1855A1ED1973BD96002FCB1D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1855A1EC1973BD96002FCB1D /* UIKit.framework */; };
@@ -85,8 +88,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1244C7C21A592E07001892D0 /* NFCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NFCollectionCell.h; path = "untitled folder/NFCollectionCell.h"; sourceTree = "<group>"; };
-		1244C7C31A592E07001892D0 /* NFCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NFCollectionCell.m; path = "untitled folder/NFCollectionCell.m"; sourceTree = "<group>"; };
 		125B62D81A4A9BAE0096ECB6 /* PSHorizontalTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSHorizontalTableCell.h; sourceTree = "<group>"; };
 		125B62D91A4A9BAE0096ECB6 /* PSHorizontalTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSHorizontalTableCell.m; sourceTree = "<group>"; };
 		125B62DA1A4A9BAE0096ECB6 /* PSHorizontalTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSHorizontalTableView.h; sourceTree = "<group>"; };
@@ -109,8 +110,16 @@
 		12D5E4BF1A511D8000B306CE /* NFTopRankViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFTopRankViewController.h; sourceTree = "<group>"; };
 		12D5E4C01A511D8000B306CE /* NFTopRankViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFTopRankViewController.m; sourceTree = "<group>"; };
 		12D5E4C11A511D8000B306CE /* NFTopRankViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NFTopRankViewController.xib; sourceTree = "<group>"; };
-		12DE3CB41A5D0C2600D61545 /* NFCollectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NFCollectionHeaderView.h; path = "untitled folder/NFCollectionHeaderView.h"; sourceTree = "<group>"; };
-		12DE3CB51A5D0C2600D61545 /* NFCollectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NFCollectionHeaderView.m; path = "untitled folder/NFCollectionHeaderView.m"; sourceTree = "<group>"; };
+		12D673901A5E1953007CF496 /* NFTabedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFTabedViewController.h; sourceTree = "<group>"; };
+		12D673911A5E1953007CF496 /* NFTabedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFTabedViewController.m; sourceTree = "<group>"; };
+		12D673941A5E1992007CF496 /* NFCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFCollectionCell.h; sourceTree = "<group>"; };
+		12D673951A5E1992007CF496 /* NFCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFCollectionCell.m; sourceTree = "<group>"; };
+		12D673F11A5E8999007CF496 /* LMDropdownView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMDropdownView.h; sourceTree = "<group>"; };
+		12D673F21A5E8999007CF496 /* LMDropdownView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMDropdownView.m; sourceTree = "<group>"; };
+		12D673F41A5E8999007CF496 /* UIImage+LMImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+LMImage.h"; sourceTree = "<group>"; };
+		12D673F51A5E8999007CF496 /* UIImage+LMImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+LMImage.m"; sourceTree = "<group>"; };
+		12D673F81A5E8A45007CF496 /* NFTopRankMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NFTopRankMenu.h; sourceTree = "<group>"; };
+		12D673F91A5E8A45007CF496 /* NFTopRankMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NFTopRankMenu.m; sourceTree = "<group>"; };
 		1855A1E51973BD96002FCB1D /* BeautyDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeautyDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1855A1E81973BD96002FCB1D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1855A1EA1973BD96002FCB1D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -230,17 +239,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1244C7C11A592DAB001892D0 /* views */ = {
-			isa = PBXGroup;
-			children = (
-				1244C7C21A592E07001892D0 /* NFCollectionCell.h */,
-				1244C7C31A592E07001892D0 /* NFCollectionCell.m */,
-				12DE3CB41A5D0C2600D61545 /* NFCollectionHeaderView.h */,
-				12DE3CB51A5D0C2600D61545 /* NFCollectionHeaderView.m */,
-			);
-			name = views;
-			sourceTree = "<group>";
-		};
 		125B62D71A4A9BAE0096ECB6 /* views */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,7 +265,7 @@
 		125B62E11A4AA87C0096ECB6 /* view controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1244C7C11A592DAB001892D0 /* views */,
+				12D673931A5E1992007CF496 /* views */,
 				12D5E4B71A511D2700B306CE /* NFHomeController.h */,
 				12D5E4B81A511D2700B306CE /* NFHomeController.m */,
 				125B62E71A4ABB480096ECB6 /* NFBeatyImageCell.h */,
@@ -281,6 +279,8 @@
 				12D5E4BF1A511D8000B306CE /* NFTopRankViewController.h */,
 				12D5E4C01A511D8000B306CE /* NFTopRankViewController.m */,
 				12D5E4C11A511D8000B306CE /* NFTopRankViewController.xib */,
+				12D673901A5E1953007CF496 /* NFTabedViewController.h */,
+				12D673911A5E1953007CF496 /* NFTabedViewController.m */,
 			);
 			path = "view controllers";
 			sourceTree = "<group>";
@@ -290,6 +290,44 @@
 			children = (
 			);
 			name = images;
+			sourceTree = "<group>";
+		};
+		12D673931A5E1992007CF496 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				12D673941A5E1992007CF496 /* NFCollectionCell.h */,
+				12D673951A5E1992007CF496 /* NFCollectionCell.m */,
+				12D673F81A5E8A45007CF496 /* NFTopRankMenu.h */,
+				12D673F91A5E8A45007CF496 /* NFTopRankMenu.m */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		12D673EF1A5E8999007CF496 /* open source */ = {
+			isa = PBXGroup;
+			children = (
+				12D673F01A5E8999007CF496 /* LMDropdownView */,
+			);
+			path = "open source";
+			sourceTree = "<group>";
+		};
+		12D673F01A5E8999007CF496 /* LMDropdownView */ = {
+			isa = PBXGroup;
+			children = (
+				12D673F11A5E8999007CF496 /* LMDropdownView.h */,
+				12D673F21A5E8999007CF496 /* LMDropdownView.m */,
+				12D673F31A5E8999007CF496 /* Vender */,
+			);
+			path = LMDropdownView;
+			sourceTree = "<group>";
+		};
+		12D673F31A5E8999007CF496 /* Vender */ = {
+			isa = PBXGroup;
+			children = (
+				12D673F41A5E8999007CF496 /* UIImage+LMImage.h */,
+				12D673F51A5E8999007CF496 /* UIImage+LMImage.m */,
+			);
+			path = Vender;
 			sourceTree = "<group>";
 		};
 		1855A1DC1973BD96002FCB1D = {
@@ -331,6 +369,7 @@
 		1855A1EE1973BD96002FCB1D /* BeautyDemo */ = {
 			isa = PBXGroup;
 			children = (
+				12D673EF1A5E8999007CF496 /* open source */,
 				12D5E4FC1A524A6100B306CE /* images */,
 				125B62E11A4AA87C0096ECB6 /* view controllers */,
 				125B62DF1A4A9E4F0096ECB6 /* util */,
@@ -765,16 +804,18 @@
 			files = (
 				1855A2341973BF28002FCB1D /* ACNavBarDrawer.m in Sources */,
 				1855A2261973BEA4002FCB1D /* SLGSlideshowView.m in Sources */,
+				12D673FA1A5E8A45007CF496 /* NFTopRankMenu.m in Sources */,
 				1855A27A1973BF9E002FCB1D /* MJRefreshBaseView.m in Sources */,
 				125B62DC1A4A9BAE0096ECB6 /* PSHorizontalTableCell.m in Sources */,
 				1855A2AE1973BFCA002FCB1D /* SelfImageVIew.m in Sources */,
+				12D673921A5E1953007CF496 /* NFTabedViewController.m in Sources */,
 				1855A2AC1973BFCA002FCB1D /* ImageInfo.m in Sources */,
 				1855A2F61973C439002FCB1D /* picVC.m in Sources */,
 				12D5E4C21A511D8000B306CE /* NFTopRankViewController.m in Sources */,
 				125B62E51A4AA8BE0096ECB6 /* NFImageShowController.m in Sources */,
 				1855A1FF1973BD96002FCB1D /* ViewController.m in Sources */,
 				12D5E4B91A511D2700B306CE /* NFHomeController.m in Sources */,
-				12DE3CB61A5D0C2600D61545 /* NFCollectionHeaderView.m in Sources */,
+				12D673F71A5E8999007CF496 /* UIImage+LMImage.m in Sources */,
 				1855A2B21973C089002FCB1D /* Colours.m in Sources */,
 				1855A27D1973BF9E002FCB1D /* MJRefreshHeaderView.m in Sources */,
 				125B62E91A4ABB480096ECB6 /* NFBeatyImageCell.m in Sources */,
@@ -783,6 +824,7 @@
 				1855A27C1973BF9E002FCB1D /* MJRefreshFooterView.m in Sources */,
 				1855A27B1973BF9E002FCB1D /* MJRefreshConst.m in Sources */,
 				1855A2621973BF83002FCB1D /* DXAlertView.m in Sources */,
+				12D673981A5E1992007CF496 /* NFCollectionCell.m in Sources */,
 				125B62DD1A4A9BAE0096ECB6 /* PSHorizontalTableView.m in Sources */,
 				1855A1F91973BD96002FCB1D /* AppDelegate.m in Sources */,
 				12D5E4BD1A511D6500B306CE /* NFUserCenterController.m in Sources */,
@@ -791,13 +833,13 @@
 				1855A2B71973C0B8002FCB1D /* NSString+FontAwesome.m in Sources */,
 				1855A22D1973BEB3002FCB1D /* PhotoStackView.m in Sources */,
 				F2EA5AEC1A4914BD00A9F5AA /* NFBeatyImageLoader.m in Sources */,
-				1244C7C41A592E07001892D0 /* NFCollectionCell.m in Sources */,
 				1855A2441973BF53002FCB1D /* ACBaseViewController.m in Sources */,
 				125B630E1A4BF8200096ECB6 /* UIView+Layout.m in Sources */,
 				F2EA5B021A4955EA00A9F5AA /* NFImageResponse.m in Sources */,
 				1855A2AD1973BFCA002FCB1D /* ImageWaterView.m in Sources */,
 				12D5A3E51A594D8A002DA874 /* NFBeautyPagingLoader.m in Sources */,
 				F2EA5AEF1A4948A200A9F5AA /* NFImageInfo.m in Sources */,
+				12D673F61A5E8999007CF496 /* LMDropdownView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -22,7 +22,6 @@
 
 static NSString *const kCollectionCellReusableIdentifier = @"ImageCell";
 static NSString *const kCollectionHeaderReusableIdentifier = @"ImageHeader";
-static const CGFloat kHeaderHeight = 80;
 
 @interface NFTopRankViewController ()
 
@@ -34,7 +33,6 @@ static const CGFloat kHeaderHeight = 80;
 @property (nonatomic,strong) NSArray *displayingPhotos;
 @property (nonatomic,strong) NSString *displayingTitle;
 
-@property (nonatomic,strong) NFCollectionHeaderView *headView;
 @property (nonatomic,assign) CGFloat lastContentOffset;
 @end
 
@@ -44,19 +42,18 @@ static const CGFloat kHeaderHeight = 80;
 {
     if (self = [super initWithNibName:nil bundle:nil]) {
         
+//        self.automaticallyAdjustsScrollViewInsets = YES;
+        
         _cachedImageInfos = [[NSMutableDictionary alloc] init];
         
-        self.automaticallyAdjustsScrollViewInsets = YES;
         self.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemTopRated
                                                                  tag:UITabBarSystemItemTopRated];
         CHTCollectionViewWaterfallLayout *collectionLayout = [[CHTCollectionViewWaterfallLayout alloc] init];
-        collectionLayout.sectionInset = UIEdgeInsetsMake(kSpace, kSpace, kSpace, kSpace);
         collectionLayout.minimumColumnSpacing = kSpace;
         collectionLayout.minimumInteritemSpacing = kSpace;
         
         _collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds
                                              collectionViewLayout:collectionLayout];
-        
         _collectionView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
         _collectionView.dataSource = self;
         _collectionView.delegate = self;
@@ -72,16 +69,13 @@ static const CGFloat kHeaderHeight = 80;
         void (^refreshBlock)(void) = ^{
             [weakSelf loadMore];
         };
-        
         [_collectionView addPullToRefreshWithActionHandler:refreshBlock
                                                   position:SVPullToRefreshPositionBottom];
         
         [self.view addSubview:_collectionView];
         
-        _headView = [[NFCollectionHeaderView alloc] initWithFrame:RECT(0, 0, SCREEN_WIDTH, kHeaderHeight)];
-        _headView.backgroundColor = [UIColor yellowColor];
         
-        [self.view addSubview:_headView];
+        self.navigationItem.title = @"最新图片";
     }
     return self;
 }
@@ -104,8 +98,17 @@ static const CGFloat kHeaderHeight = 80;
             NFImageResponse *resp = obj;
             [self loadImageInfos:resp.imageInfos];
             [_collectionView.pullToRefreshView stopAnimating];
+            [self viewDidLayoutSubviews];
         }
     }];
+}
+
+- (void)viewDidLayoutSubviews
+{
+    CGFloat naviHeight = self.navigationController.navigationBar.height;
+    CGFloat tabHeight = self.tabBarController.tabBar.height;
+//    _collectionView.frame = CGRectMake(0, naviHeight, SCREEN_WIDTH, self.view.height-tabHeight);
+    _collectionView.contentInset = UIEdgeInsetsMake(naviHeight, 0, tabHeight, 0);
 }
 
 - (void)loadImageInfos:(NSArray *)imageInfos
@@ -272,30 +275,6 @@ static const CGFloat kHeaderHeight = 80;
     //TODO:
 }
 
-#pragma mark - UIScrollViewDelegate
-- (void)handleHeader
-{
-    UIScrollView *scrollView = _collectionView;
-    if (self.lastContentOffset > scrollView.contentOffset.y){
-        _headView.hidden = NO;
-    }else if (self.lastContentOffset < scrollView.contentOffset.y){
-        _headView.hidden = YES;
-    }
-    self.lastContentOffset = scrollView.contentOffset.y; 
-}
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-//    [self handleHeader];
-}
-
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
-{
-    [self handleHeader];
-}
-
-- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
-{
-}
 
 @end

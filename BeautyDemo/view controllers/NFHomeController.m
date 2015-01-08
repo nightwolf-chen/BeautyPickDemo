@@ -3,7 +3,7 @@
 //  BeautyDemo
 //
 //  Created by exitingchen on 14/12/29.
-//  Copyright (c) 2014年 icephone. All rights reserved.
+//  Copyright (c) 2014年 nirvawolf. All rights reserved.
 //
 
 #import "NFHomeController.h"
@@ -26,15 +26,14 @@
                                  [[NFImageShowController alloc] initWithNibName:nil bundle:nil],
                                  [[NFUserCenterController alloc] initWithNibName:nil bundle:nil]];
     
-    NSArray *tmpControllers = @[[[picVC alloc] initWithNibName:nil bundle:nil],
-                                 [[NFImageShowController alloc] initWithNibName:nil bundle:nil],
-                                 [[NFUserCenterController alloc] initWithNibName:nil bundle:nil]];
+    NSMutableArray *navigateCtrs = [NSMutableArray array];
     
-#ifdef DEBUG
-    tmpControllers = viewControllers;
-#endif
+    for(UIViewController *ctr in viewControllers){
+        UINavigationController *navigateCtr = [[UINavigationController alloc] initWithRootViewController:ctr];
+        [navigateCtrs addObject:navigateCtr];
+    }
     
-    self.viewControllers = tmpControllers;
+    self.viewControllers = navigateCtrs;
     
 }
 

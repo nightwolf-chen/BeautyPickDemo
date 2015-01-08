@@ -3,7 +3,7 @@
 //  BeautyDemo
 //
 //  Created by Colin on 14-7-14.
-//  Copyright (c) 2014年 icephone. All rights reserved.
+//  Copyright (c) 2014年 nirvawolf. All rights reserved.
 //
 
 #import "AppDelegate.h"

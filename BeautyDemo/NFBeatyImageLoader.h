@@ -3,7 +3,7 @@
 //  BeautyDemo
 //
 //  Created by  exitingchen on 12/23/14.
-//  Copyright (c) 2014 icephone. All rights reserved.
+//  Copyright (c) 2014 nirvawolf. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
